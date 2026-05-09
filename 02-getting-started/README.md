@@ -171,3 +171,9 @@ You should now have:
 - ✅ Had at least one real conversation using the structured prompt above
 
 > 👉 **Next up:** [Module 03 — Prompt Engineering](../03-prompting/) — where the real leverage is.
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 01 — Introduction](../01-introduction/) | [Course README](../README.md) | [Module 03 — Prompt Engineering](../03-prompting/) |

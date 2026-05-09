@@ -30,3 +30,5 @@ For substantial additions, open an issue first so we can discuss direction befor
 ## Code of Conduct
 
 Be kind. Disagree with ideas, not people. We're all learning.
+
+This project is governed by the [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you agree to uphold it.

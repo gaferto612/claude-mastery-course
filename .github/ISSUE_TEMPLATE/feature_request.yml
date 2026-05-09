@@ -1,0 +1,28 @@
+name: 💡 Suggestion or new content
+description: A new example, project, prompt, or module idea
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's the idea?
+      description: Describe what you'd like to see added or improved.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter?
+      description: Who benefits and how — be concrete.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Small (typo, tweak, new prompt)
+        - Medium (new code example, diagram)
+        - Large (new module, project, or section)
+    validations:
+      required: true

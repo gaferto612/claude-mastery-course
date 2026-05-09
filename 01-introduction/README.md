@@ -217,3 +217,9 @@ You should now be able to answer:
 - [ ] What's the difference between Claude.ai, Claude Code, and the Claude API?
 
 > 👉 **Next up:** [Module 02 — Getting Started](../02-getting-started/) — sign up, set up, and have your first real conversation.
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| _Start of course_ | [Course README](../README.md) | [Module 02 — Getting Started](../02-getting-started/) |

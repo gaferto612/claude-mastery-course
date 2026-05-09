@@ -407,3 +407,9 @@ By finishing this module you've covered:
 Pick one project, **make it yours** — different topic, different tools, real data — and put it in your portfolio.
 
 > 👉 **Next up:** [Module 09 — Resources](../09-resources/) — cheat sheets, links, glossary.
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 07 — Advanced Techniques](../07-advanced-techniques/) | [Course README](../README.md) | [Module 09 — Resources](../09-resources/) |

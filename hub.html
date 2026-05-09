@@ -623,14 +623,14 @@ function updatePickerResult() {
   const max = Math.max(opusScore, sonnetScore, haikuScore);
   let model, reason;
   if (max === opusScore) {
-    model = '💎 Claude Opus';
+    model = '💎 Claude Opus 4.7';
     reason = `For hard reasoning and quality-first work, Opus delivers the strongest results. It costs more and runs slower, but you've signaled the task warrants it. Pin a dated version like \`claude-opus-4-7\` in production.`;
   } else if (max === haikuScore) {
-    model = '🚀 Claude Haiku';
-    reason = `Speed and cost win here. Haiku is built for high-volume, latency-sensitive work without sacrificing too much quality. Great for classification, simple Q&A, and real-time apps.`;
+    model = '🚀 Claude Haiku 4.5';
+    reason = `Speed and cost win here. Haiku is built for high-volume, latency-sensitive work without sacrificing too much quality. Great for classification, simple Q&A, and real-time apps. Pin a dated version like \`claude-haiku-4-5-20251001\` in production.`;
   } else {
-    model = '⚡ Claude Sonnet';
-    reason = `The best default for production. Sonnet balances intelligence, speed, and cost — the right pick for ~90% of real-world workloads.`;
+    model = '⚡ Claude Sonnet 4.6';
+    reason = `The best default for production. Sonnet balances intelligence, speed, and cost — the right pick for ~90% of real-world workloads. Pin a dated version like \`claude-sonnet-4-6\` in production.`;
   }
 
   verdict.textContent = '→ ' + model;

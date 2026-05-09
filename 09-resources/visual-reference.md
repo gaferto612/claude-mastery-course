@@ -1,44 +1,29 @@
 # 📊 The Visual Reference
 
-> All the key diagrams from the course in one place. Bookmark this page.
+> All the key visuals from the course in one place. Bookmark this page.
 
 ---
 
 ## 🗺️ Course flow
 
-```mermaid
-flowchart LR
-    A[👋 Introduction] --> B[🚀 Getting Started]
-    B --> C[💡 Prompting]
-    C --> D[🛠️ Features]
-    D --> E[💻 Claude Code]
-    D --> F[⚙️ API]
-    E --> G[🧪 Advanced]
-    F --> G
-    G --> H[🏗️ Projects]
-    H --> I[📚 Resources]
-
-    style A fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style C fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style F fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style I fill:#FFB67E,stroke:#D97757,color:#1a1a1a
-```
+| | | | | |
+|---|---|---|---|---|
+| 👋 **01** Intro | → | 🚀 **02** Getting Started | → | 💡 **03** Prompting |
+| | | | | ↓ |
+| 🏗️ **08** Projects | ← | 🧪 **07** Advanced | ← | 🛠️ **04** Features |
+| ↓ | | ↑ | | ↓ |
+| 📚 **09** Resources | | ⚙️ **06** API | ← | 💻 **05** Claude Code |
 
 ---
 
 ## 🧠 The three Claude surfaces
 
-```mermaid
-flowchart LR
-    User((👤 You)) --> CA[💬 Claude.ai]
-    User --> CC[💻 Claude Code]
-    User --> API[⚙️ Claude API]
-
-    CA --> Model{🧠 Claude}
-    CC --> Model
-    API --> Model
-
-    style Model fill:#1a1a1a,stroke:#D97757,color:#fff
+```
+👤 You
+   │
+   ├──▶ 💬 Claude.ai      (chat — web, mobile, desktop)  ─┐
+   ├──▶ 💻 Claude Code    (terminal coding agent)        ─┼──▶ 🧠 Claude
+   └──▶ ⚙️ Claude API     (build your own apps)          ─┘
 ```
 
 ---
@@ -55,224 +40,170 @@ flowchart LR
                               │            🚀 Haiku
                               └──────────────────────────►
                                                   SPEED & COST
-
-
-   Opus    →  Hardest tasks: complex reasoning, agentic coding
-   Sonnet  →  Daily driver: 90% of production work
-   Haiku   →  High volume: classification, simple Q&A
 ```
+
+| | 💎 **Opus** | ⚡ **Sonnet** | 🚀 **Haiku** |
+|---|---|---|---|
+| Best for | Hardest tasks | Daily driver | High volume |
+| Examples | Complex reasoning, agentic coding | 90% of production work | Classification, simple Q&A |
 
 ---
 
 ## 🎯 The 6 ingredients of a great prompt
 
-```mermaid
-flowchart TD
-    Prompt[🎯 Great Prompt] --> Role[🎭 ROLE]
-    Prompt --> Context[📋 CONTEXT]
-    Prompt --> Task[🎯 TASK]
-    Prompt --> Constraints[📐 CONSTRAINTS]
-    Prompt --> Format[📦 FORMAT]
-    Prompt --> Examples[🌟 EXAMPLES]
-
-    style Prompt fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Role fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style Context fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Task fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style Constraints fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-    style Format fill:#FFC293,stroke:#D97757,color:#1a1a1a
-    style Examples fill:#FFB67E,stroke:#D97757,color:#1a1a1a
+```
+                          🎯 Great Prompt
+                                │
+        ┌───────────┬───────────┼───────────┬───────────┐
+        ▼           ▼           ▼           ▼           ▼
+   🎭 ROLE     📋 CONTEXT    🎯 TASK    📐 CONSTRAINTS  📦 FORMAT  🌟 EXAMPLES
 ```
 
 ---
 
 ## 🛠️ Diagnosing a bad prompt
 
-```mermaid
-flowchart TD
-    A[I'm getting bad output] --> B{Task<br/>ambiguous?}
-    B -->|Yes| C[Add: 'Ask 3<br/>questions first']
-    B -->|No| D{Wrong tone<br/>or format?}
-    D -->|Yes| E[Add an EXAMPLE<br/>or FORMAT spec]
-    D -->|No| F{Complex<br/>multi-step?}
-    F -->|Yes| G[Break into<br/>a CHAIN]
-    F -->|No| H{Reasoning<br/>shallow?}
-    H -->|Yes| I[Add 'think<br/>step-by-step']
-    H -->|No| J{Details<br/>missing?}
-    J -->|Yes| K[Add ROLE +<br/>CONTEXT +<br/>CONSTRAINTS]
-    J -->|No| L[Try a bigger<br/>model]
+🚨 **Bad output? Walk down this list — first match wins.**
 
-    style C fill:#D97757,stroke:#1a1a1a,color:#fff
-    style E fill:#D97757,stroke:#1a1a1a,color:#fff
-    style G fill:#D97757,stroke:#1a1a1a,color:#fff
-    style I fill:#D97757,stroke:#1a1a1a,color:#fff
-    style K fill:#D97757,stroke:#1a1a1a,color:#fff
-    style L fill:#D97757,stroke:#1a1a1a,color:#fff
-```
+| If… | Then… |
+|---|---|
+| ❓ Task is **ambiguous** | Add: *"Ask me 3 clarifying questions first"* |
+| 🎨 Wrong **tone or format** | Add: an **example** or a **format spec** |
+| 🧩 Complex **multi-step** task | Break into a **chain** of smaller prompts |
+| 🧠 Reasoning is **shallow** | Add: *"Think step-by-step before answering"* |
+| 📋 Details are **missing** | Add: **role + context + constraints** |
+| 🤷 Still bad? | Try a **different model** (Sonnet → Opus) |
 
 ---
 
 ## 📁 The Claude.ai feature universe
 
-```mermaid
-mindmap
-  root((Claude.ai))
-    Workspace
-      Projects
-      Custom Instructions
-      Style Presets
-    Inputs
-      File Uploads
-      Images
-      PDFs
-    Outputs
-      Artifacts
-      Code Execution
-    Live data
-      Web Search
-      Research Mode
-    Memory
-      Cross-chat
-      Past chat search
-    Connectors
-      Google Workspace
-      GitHub
-      Slack
-      Notion
-      40+ more
-    Skills
-      PowerPoint
-      Excel
-      Word
-      Custom Skills
-```
+| 🏗️ Workspace | 📥 Inputs | 📤 Outputs | 🌐 Live data | 🧠 Memory | 🔌 Connectors | 🎒 Skills |
+|---|---|---|---|---|---|---|
+| Projects | File uploads | Artifacts | Web Search | Cross-chat memory | Google Workspace | PowerPoint |
+| Custom Instructions | Images | Code Execution | Research Mode | Past chat search | GitHub | Excel |
+| Style Presets | PDFs | File Creation | | | Slack | Word |
+| | | | | | Notion | Custom Skills |
+| | | | | | 40+ more | |
 
 ---
 
 ## 🔄 Claude Code's core loop
 
-```mermaid
-flowchart TD
-    A[👤 You describe goal] --> B[🧠 Claude plans]
-    B --> C{Read or edit?}
-    C -->|Read| D[📖 Read files]
-    C -->|Edit| E[📝 Propose edit]
-    E --> F{👤 Approve?}
-    F -->|Yes| G[✏️ Apply]
-    F -->|No| H[💬 Push back]
-    H --> B
-    D --> I[💬 Report]
-    G --> J{Done?}
-    J -->|No| B
-    J -->|Yes| K[✅ Finished]
-
-    style F fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style K fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+   👤 You describe a goal
+            │
+            ▼
+   🧠 Claude plans  ◀──────────────┐
+            │                      │
+            ▼                      │
+      Read-only or edit?           │
+       │            │              │
+       ▼            ▼              │
+  📖 Read       📝 Propose         │
+   files         edit              │
+       │            │              │
+       │            ▼              │
+       │     👤 You approve?       │
+       │      │           │        │
+       │     yes          no ──▶ 💬 push back ──┘
+       │      ▼
+       │   ✏️ Apply
+       │      │
+       ▼      ▼
+   💬 Report  ── Done? ──▶ ✅ Finished
+                  │
+                  no ──▶ (back to plan)
 ```
 
 ---
 
 ## 🤖 The agent loop (API)
 
-```mermaid
-flowchart TD
-    Start([🎯 Goal]) --> Plan[🧠 Plan]
-    Plan --> D{Tool needed?}
-    D -->|Yes| Tool[🔧 Call tool]
-    Tool --> Obs[👀 Result]
-    Obs --> Done{Done?}
-    D -->|No| Answer[💬 Answer]
-    Done -->|No| Plan
-    Done -->|Yes| Answer
-    Answer --> End([✅])
-
-    style End fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+🎯 Goal
+   │
+   ▼
+🧠 Plan  ◀──────────────┐
+   │                    │
+   ▼                    │
+  Tool needed?          │
+   │           │        │
+   yes         no       │
+   ▼           ▼        │
+🔧 Call tool   │        │
+   │           │        │
+   ▼           │        │
+👀 Result      │        │
+   │           │        │
+   ▼           ▼        │
+  Done?                 │
+   │       │            │
+   no  ────┘ (loop)     │
+   │                    │
+   yes                  │
+   ▼                    │
+💬 Answer ──▶ ✅ Done    │
 ```
 
 ---
 
 ## 🔌 Tool use sequence
 
-```mermaid
-sequenceDiagram
-    participant U as 👤 User
-    participant C as 🧠 Claude
-    participant Y as 💻 Your Code
-
-    U->>C: "Should I bring a jacket?"
-    C->>Y: tool_use: get_weather("Paris")
-    Y->>Y: Calls weather API
-    Y->>C: tool_result: {temp: 14, drizzle}
-    C->>U: "Yes — 14°C, drizzly. Light jacket."
+```
+1.  👤 User       ──▶  🧠 Claude     "Should I bring a jacket?"
+2.  🧠 Claude     ──▶  💻 Your code   tool_use: get_weather("Paris")
+3.  💻 Your code  ──▶  💻 Your code   calls weather API
+4.  💻 Your code  ──▶  🧠 Claude      tool_result: {temp: 14, drizzle}
+5.  🧠 Claude     ──▶  👤 User        "Yes — 14°C, drizzly. Light jacket."
 ```
 
 ---
 
 ## 🌐 MCP architecture
 
-```mermaid
-flowchart TD
-    Claude[🧠 Claude] -.MCP.-> S1[📧 Mail]
-    Claude -.MCP.-> S2[🐙 GitHub]
-    Claude -.MCP.-> S3[🗄️ Database]
-    Claude -.MCP.-> S4[📓 Notion]
+> 🧠 **Claude** &nbsp; ──MCP──▶ &nbsp; 📧 Mail · 🐙 GitHub · 🗄️ Database · 📓 Notion · ➕ any other MCP server
 
-    style Claude fill:#1a1a1a,stroke:#D97757,color:#fff
-```
+Each server exposes **tools** (actions Claude can take), **resources** (data Claude can read), and **prompts** (templates).
 
 ---
 
 ## 💰 The cost-saving router pattern
 
-```mermaid
-flowchart LR
-    User([👤 Query]) --> Router[⚡ Router<br/>cheap + fast]
-    Router -->|Easy 90%| Haiku[🚀 Haiku]
-    Router -->|Hard 10%| Opus[💎 Opus]
-    Haiku --> Reply([💬 Answer])
-    Opus --> Reply
-
-    style Router fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Reply fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+                                              ┌──▶ 🚀 Haiku   (easy 90%)   ──▶ 💬 Answer
+👤 User query  ──▶  ⚡ Router (cheap/fast) ──┤
+                                              └──▶ 💎 Opus    (hard 10%)   ──▶ 💬 Answer
 ```
 
 ---
 
-## 🚀 Production checklist flow
+## 🚀 Production checklist
 
-```mermaid
-flowchart TD
-    Build[🏗️ Built something] --> Sec[🔒 Secrets in vault]
-    Sec --> Rate[⏱️ Rate limit]
-    Rate --> Cost[💰 Cost caps]
-    Cost --> Retry[🔁 Retries with backoff]
-    Retry --> Log[📝 Logging + PII redaction]
-    Log --> Eval[🧪 Eval set]
-    Eval --> Fall[🛡️ Fallback model]
-    Fall --> Cache[💾 Prompt caching]
-    Cache --> Ship[🚀 Ship!]
+Walk top to bottom before shipping any Claude-powered app:
 
-    style Ship fill:#D97757,stroke:#1a1a1a,color:#fff
-```
+| # | Step | What to check |
+|---|---|---|
+| 1 | 🔒 Secrets in vault | No keys in code, repo, or logs |
+| 2 | ⏱️ Rate-limit endpoint | Don't expose raw API to users |
+| 3 | 💰 Cost caps + alerting | Anomaly alerts on token spend |
+| 4 | 🔁 Retries with backoff | Handle 429s and 5xxs gracefully |
+| 5 | 📝 Logging + PII redaction | Audit trail, but no leaks |
+| 6 | 🧪 Eval set | Regression tests on every prompt change |
+| 7 | 🛡️ Fallback model | Survive model outages |
+| 8 | 💾 Prompt caching | Static context > 1024 tokens? Cache it |
+| 9 | 🚀 **Ship it!** | |
 
 ---
 
 ## 📚 The four projects (Module 8)
 
-```mermaid
-flowchart TD
-    Course[📚 Module 8] --> P1[1️⃣ CLI Chatbot]
-    Course --> P2[2️⃣ Doc Q&A]
-    Course --> P3[3️⃣ Research Agent]
-    Course --> P4[4️⃣ Code Reviewer]
-
-    P1 --> S1[Streaming<br/>Multi-turn<br/>System prompts]
-    P2 --> S2[RAG<br/>Caching<br/>File parsing]
-    P3 --> S3[Tool use<br/>Planning<br/>Web fetch]
-    P4 --> S4[Structured outputs<br/>git integration<br/>JSON schema]
-
-    style Course fill:#1a1a1a,stroke:#D97757,color:#fff
-```
+| # | Project | Skills |
+|---|---|---|
+| 1️⃣ | 💬 **CLI Chatbot** | Streaming · multi-turn · system prompts |
+| 2️⃣ | 📄 **Doc Q&A** | RAG · caching · file parsing |
+| 3️⃣ | 🔍 **Research Agent** | Tool use · planning · web fetch |
+| 4️⃣ | 🤖 **Code Reviewer** | Structured outputs · git integration · JSON schema |
 
 ---
 

@@ -42,21 +42,30 @@ For Opus 4.7, Sonnet 4.6, and Opus 4.6, you can also tune an **effort** paramete
 
 An **agent** is Claude in a loop, using tools to make progress on a goal.
 
-```mermaid
-flowchart TD
-    Start([🎯 Receive goal]) --> Plan[🧠 Plan next action]
-    Plan --> Decision{Need a tool?}
-    Decision -->|Yes| Tool[🔧 Call tool]
-    Tool --> Observe[👀 Observe result]
-    Observe --> Check{Goal<br/>achieved?}
-    Decision -->|No - I have answer| Answer[💬 Give answer]
-    Check -->|No| Plan
-    Check -->|Yes| Answer
-    Answer --> End([✅ Done])
-
-    style Start fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Tool fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style End fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+🎯 Receive goal
+       │
+       ▼
+🧠 Plan next action  ◀──────────────┐
+       │                            │
+       ▼                            │
+   Need a tool?                     │
+    │         │                     │
+   yes        no (have answer)      │
+    ▼         │                     │
+🔧 Call tool  │                     │
+    │         │                     │
+    ▼         │                     │
+👀 Observe    │                     │
+    │         │                     │
+    ▼         ▼                     │
+   Goal achieved?                   │
+    │            │                  │
+    no ──────────┘ (loop)           │
+    │                               │
+    yes                             │
+    ▼                               │
+💬 Give answer  ──▶  ✅ Done         │
 ```
 
 ### Levels of agentic-ness
@@ -120,23 +129,12 @@ def run_agent(goal: str, tools, max_iterations=20):
 
 ### Architecture
 
-```mermaid
-flowchart TD
-    Claude[🧠 Claude] -.MCP protocol.-> S1[📧 Mail<br/>MCP server]
-    Claude -.MCP protocol.-> S2[🐙 GitHub<br/>MCP server]
-    Claude -.MCP protocol.-> S3[🗄️ Your DB<br/>MCP server]
-    Claude -.MCP protocol.-> S4[📓 Notion<br/>MCP server]
-
-    S1 --> Tools1[Tools • Resources • Prompts]
-    S2 --> Tools2[Tools • Resources • Prompts]
-    S3 --> Tools3[Tools • Resources • Prompts]
-    S4 --> Tools4[Tools • Resources • Prompts]
-
-    style Claude fill:#1a1a1a,stroke:#D97757,color:#fff
-    style S1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style S2 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style S3 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style S4 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
+```
+                                  📧 Mail MCP server      ──▶  Tools · Resources · Prompts
+                                  🐙 GitHub MCP server    ──▶  Tools · Resources · Prompts
+🧠 Claude  ──MCP protocol──▶
+                                  🗄️ Your DB MCP server   ──▶  Tools · Resources · Prompts
+                                  📓 Notion MCP server    ──▶  Tools · Resources · Prompts
 ```
 
 ### Use cases
@@ -276,18 +274,10 @@ The four levers:
 
 A common architecture — the **router pattern**:
 
-```mermaid
-flowchart LR
-    User([👤 User query]) --> Router[⚡ Router<br/>cheap/fast]
-    Router -->|Easy 90%| Haiku[🚀 Haiku<br/>answers fast & cheap]
-    Router -->|Hard 10%| Opus[💎 Opus<br/>handles tough cases]
-    Haiku --> Reply([💬 Answer])
-    Opus --> Reply
-
-    style Router fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Haiku fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style Opus fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Reply fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+                                              ┌──▶ 🚀 Haiku   (easy 90%)   ──▶ 💬 Answer
+👤 User query  ──▶  ⚡ Router (cheap/fast) ──┤
+                                              └──▶ 💎 Opus    (hard 10%)   ──▶ 💬 Answer
 ```
 
 A **router prompt** (cheap, fast) decides which lane each query takes.

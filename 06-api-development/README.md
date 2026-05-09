@@ -8,21 +8,15 @@
 
 ## 6.0 What you'll be able to build
 
-```mermaid
-flowchart LR
-    You([👤 Your code]) -->|HTTPS| API[⚙️ Claude API]
-    API --> Models[🧠 Models]
-
-    Models --> R1[💬 Chat]
-    Models --> R2[🌊 Streaming]
-    Models --> R3[🛠️ Tool use]
-    Models --> R4[👁️ Vision]
-    Models --> R5[📄 PDFs]
-    Models --> R6[💾 Cached prompts]
-
-    style You fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style API fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Models fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+👤 Your code  ──HTTPS──▶  ⚙️ Claude API  ──▶  🧠 Models
+                                                  │
+                                                  ├──▶  💬 Chat
+                                                  ├──▶  🌊 Streaming
+                                                  ├──▶  🛠️ Tool use
+                                                  ├──▶  👁️ Vision
+                                                  ├──▶  📄 PDFs
+                                                  └──▶  💾 Cached prompts
 ```
 
 ---
@@ -220,18 +214,13 @@ For long conversations, you'll eventually hit the **context window** limit. Stra
 
 Tools let Claude call your code. The flow:
 
-```mermaid
-sequenceDiagram
-    participant U as 👤 User
-    participant C as 🧠 Claude
-    participant Y as 💻 Your Code
-
-    U->>C: "Should I bring a jacket to Paris?"
-    C->>C: Decides: needs weather
-    C->>Y: tool_use: get_weather(city="Paris")
-    Y->>Y: Calls real weather API
-    Y->>C: tool_result: {temp: 14, drizzle}
-    C->>U: "Yes — 14°C and drizzly. Bring a light jacket."
+```
+1.  👤 User       ──▶  🧠 Claude     "Should I bring a jacket to Paris?"
+2.  🧠 Claude     ──▶  🧠 Claude      decides: needs weather
+3.  🧠 Claude     ──▶  💻 Your code   tool_use: get_weather(city="Paris")
+4.  💻 Your code  ──▶  💻 Your code   calls real weather API
+5.  💻 Your code  ──▶  🧠 Claude      tool_result: {temp: 14, drizzle}
+6.  🧠 Claude     ──▶  👤 User        "Yes — 14°C and drizzly. Bring a light jacket."
 ```
 
 1. You define a tool's **name, description, and input schema**
@@ -428,23 +417,16 @@ Great for: dataset labeling, bulk content generation, periodic reports.
 
 ## 6.12 Production Checklist
 
-Before you ship anything API-powered:
+Before you ship anything API-powered, walk this checklist top to bottom:
 
-```mermaid
-flowchart TD
-    Build[🏗️ I built something with the Claude API] --> Q1{Going to<br/>production?}
-    Q1 -->|Yes| Sec[🔒 Secrets<br/>in vault, not code]
-    Sec --> Rate[⏱️ Rate limit<br/>your endpoint]
-    Rate --> Cost[💰 Cost caps<br/>+ alerting]
-    Cost --> Retry[🔁 Retries with<br/>exponential backoff]
-    Retry --> Log[📝 Logging with<br/>PII redaction]
-    Log --> Eval[🧪 Eval set<br/>+ regression test]
-    Eval --> Fall[🛡️ Fallback model<br/>for outages]
-    Fall --> Cache[💾 Prompt caching<br/>if context > 1024 tokens]
-    Cache --> Ship[🚀 Ship it!]
-
-    style Build fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style Ship fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+🏗️ I built something with the Claude API
+        │
+        ▼
+🔒 Secrets in vault    ──▶   ⏱️ Rate-limit endpoint   ──▶   💰 Cost caps + alerts
+                                                              │
+                                                              ▼
+🚀 Ship it!  ◀──  💾 Prompt caching  ◀──  🛡️ Fallback model  ◀──  🧪 Eval set  ◀──  📝 Logging + PII redact  ◀──  🔁 Retries w/ backoff
 ```
 
 Before you ship:

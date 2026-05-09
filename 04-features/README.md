@@ -8,41 +8,13 @@
 
 ## 4.1 The Claude.ai feature universe
 
-```mermaid
-mindmap
-  root((Claude.ai))
-    Workspace
-      Projects
-      Custom Instructions
-      Style Presets
-    Inputs
-      File Uploads
-      Images
-      PDFs
-      Spreadsheets
-    Outputs
-      Artifacts
-      Code Execution
-      File Creation
-    Live data
-      Web Search
-      Research Mode
-    Memory
-      Cross-chat memory
-      Past chat search
-    Connectors
-      Google Workspace
-      GitHub
-      Slack
-      Notion
-      40+ more
-    Skills
-      PowerPoint
-      Excel
-      Word
-      PDF
-      Custom Skills
-```
+| 🏗️ Workspace | 📥 Inputs | 📤 Outputs | 🌐 Live data | 🧠 Memory | 🔌 Connectors | 🎒 Skills |
+|---|---|---|---|---|---|---|
+| Projects | File uploads | Artifacts | Web Search | Cross-chat memory | Google Workspace | PowerPoint |
+| Custom Instructions | Images | Code Execution | Research Mode | Past chat search | GitHub | Excel |
+| Style Presets | PDFs | File Creation | | | Slack | Word |
+| | Spreadsheets | | | | Notion | PDF |
+| | | | | | 40+ more | Custom Skills |
 
 ---
 
@@ -50,24 +22,15 @@ mindmap
 
 A **Project** is a folder that gives Claude long-term context.
 
-```mermaid
-flowchart TD
-    P[📁 Project: Q1 Marketing] --> CI[📝 Custom Instructions<br/>Brand voice, audience, rules]
-    P --> KF[📚 Knowledge Files<br/>Brand guide, personas, past content]
-    P --> C1[💬 Chat 1: Blog draft]
-    P --> C2[💬 Chat 2: Email campaign]
-    P --> C3[💬 Chat 3: Social posts]
-
-    CI -.uses.-> C1
-    CI -.uses.-> C2
-    CI -.uses.-> C3
-    KF -.uses.-> C1
-    KF -.uses.-> C2
-    KF -.uses.-> C3
-
-    style P fill:#1a1a1a,stroke:#D97757,color:#fff
-    style CI fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style KF fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
+```
+📁 Project: Q1 Marketing
+   │
+   ├─ 📝 Custom Instructions  (brand voice, audience, rules)  ─┐
+   ├─ 📚 Knowledge Files      (brand guide, personas, past)    │ shared by every chat
+   │                                                           │
+   ├─ 💬 Chat 1 — Blog draft       ◀────────────────────────── ┤
+   ├─ 💬 Chat 2 — Email campaign   ◀────────────────────────── ┤
+   └─ 💬 Chat 3 — Social posts     ◀────────────────────────── ┘
 ```
 
 ### When to use a Project
@@ -122,17 +85,9 @@ When you ask Claude to create something substantial, it puts the output in an **
 
 ### Three superpowers of Artifacts
 
-```mermaid
-flowchart LR
-    A[🎨 Artifact] --> S1[1️⃣ Iterate without<br/>retyping]
-    A --> S2[2️⃣ Real<br/>interactivity]
-    A --> S3[3️⃣ Persists across<br/>messages]
-
-    style A fill:#1a1a1a,stroke:#D97757,color:#fff
-    style S1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style S2 fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style S3 fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-```
+| 1️⃣ Iterate without retyping | 2️⃣ Real interactivity | 3️⃣ Persists across messages |
+|:---:|:---:|:---:|
+| Edit in place — no copy/paste | React apps actually run | Survives the whole conversation |
 
 ### What can be an Artifact?
 
@@ -152,22 +107,15 @@ Build me a single-page React app: a habit tracker for the next 30 days.
 
 ## 4.4 File Uploads — The Input Universe
 
-```mermaid
-flowchart LR
-    Files{📁 Drop a file} --> PDF[📄 PDF]
-    Files --> DOC[📝 DOCX/MD/TXT]
-    Files --> XLS[📊 XLSX/CSV]
-    Files --> IMG[🖼️ JPG/PNG/WEBP]
-    Files --> CODE[💻 Code files]
+📁 **Drop a file →** Claude handles it natively. No conversion needed.
 
-    PDF --> P1[Reads text + analyzes<br/>charts visually]
-    DOC --> D1[Full text<br/>understanding]
-    XLS --> X1[Reads as table,<br/>can compute]
-    IMG --> I1[Describes, transcribes,<br/>handwriting OCR]
-    CODE --> C1[Syntax-aware<br/>reading]
-
-    style Files fill:#1a1a1a,stroke:#D97757,color:#fff
-```
+| File type | What Claude does with it |
+|---|---|
+| 📄 **PDF** | Reads text + analyzes charts visually |
+| 📝 **DOCX / MD / TXT** | Full text understanding |
+| 📊 **XLSX / CSV** | Reads as a table, can compute |
+| 🖼️ **JPG / PNG / WEBP** | Describes, transcribes, handwriting OCR |
+| 💻 **Code files** | Syntax-aware reading |
 
 ### Killer use cases
 
@@ -202,21 +150,10 @@ For bigger questions, **Research mode** runs many searches across many minutes a
 
 ## 4.6 Memory — Cross-Conversation Continuity
 
-```mermaid
-flowchart LR
-    Chat1[💬 Today's chat] -.remembers.-> M[🧠 Memory]
-    Chat2[💬 Tomorrow's chat] <-.recalls.-> M
-    Chat3[💬 Next week's chat] <-.recalls.-> M
-
-    M --> P1[Your role]
-    M --> P2[Ongoing projects]
-    M --> P3[Preferences]
-    M --> P4[Recurring topics]
-
-    style M fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Chat1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Chat2 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Chat3 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
+```
+💬 Today's chat       ──remembers──▶  ┐
+💬 Tomorrow's chat    ◀──recalls───   │  🧠 Memory  ──▶  Your role · ongoing projects · preferences · recurring topics
+💬 Next week's chat   ◀──recalls───   ┘
 ```
 
 You're in control:
@@ -231,21 +168,7 @@ You're in control:
 
 **MCP (Model Context Protocol)** is an open standard that lets Claude talk to other apps.
 
-```mermaid
-flowchart TD
-    Claude[🧠 Claude] -.MCP.-> GC[📅 Calendar]
-    Claude -.MCP.-> GM[📧 Gmail]
-    Claude -.MCP.-> GD[📁 Drive]
-    Claude -.MCP.-> SL[💬 Slack]
-    Claude -.MCP.-> GH[🐙 GitHub]
-    Claude -.MCP.-> NT[📓 Notion]
-    Claude -.MCP.-> LN[📋 Linear]
-    Claude -.MCP.-> JR[🎫 Jira]
-    Claude -.MCP.-> SF[☁️ Salesforce]
-    Claude -.MCP.-> Etc[➕ 30+ more]
-
-    style Claude fill:#1a1a1a,stroke:#D97757,color:#fff
-```
+> 🧠 **Claude** &nbsp; ──MCP──▶ &nbsp; 📅 Calendar · 📧 Gmail · 📁 Drive · 💬 Slack · 🐙 GitHub · 📓 Notion · 📋 Linear · 🎫 Jira · ☁️ Salesforce · ➕ **30+ more**
 
 ### When connectors shine
 
@@ -276,22 +199,16 @@ You don't usually invoke these manually — Claude reaches for the right skill w
 
 ## 4.9 Putting It All Together — The Power-User Stack
 
-```mermaid
-flowchart TD
-    Project[📁 Project: My SaaS Startup] --> CI[📝 Custom Instructions<br/>role, voice, dont-list]
-    Project --> KF[📚 Files: brand guide,<br/>pricing, customer list]
-    Project --> M[💬 Marketing chats<br/>+ Web Search]
-    Project --> C[💬 Code chats<br/>+ GitHub connector]
-    Project --> E[💬 Customer chats<br/>+ Gmail connector]
-    Project --> S[💬 Strategy chats<br/>files only, no search]
-
-    style Project fill:#1a1a1a,stroke:#D97757,color:#fff
-    style CI fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style KF fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style M fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style C fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style E fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style S fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
+```
+📁 Project: My SaaS Startup
+   │
+   ├─ 📝 Custom Instructions   role, voice, don't-list
+   ├─ 📚 Files                 brand guide, pricing, customer list
+   │
+   ├─ 💬 Marketing chats       + 🌐 Web Search
+   ├─ 💬 Code chats            + 🐙 GitHub connector
+   ├─ 💬 Customer chats        + 📧 Gmail connector
+   └─ 💬 Strategy chats        files only · no search · private
 ```
 
 ---

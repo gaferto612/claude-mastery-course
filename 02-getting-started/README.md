@@ -8,9 +8,10 @@
 
 ## 2.0 Your journey in this module
 
-```
-📝 Sign up   ──▶   💎 Pick plan   ──▶   📱 Install apps   ──▶   ⚙️ Tune settings   ──▶   💬 First chat
-```
+| 1 | 2 | 3 | 4 | 5 |
+|:---:|:---:|:---:|:---:|:---:|
+| 📝 | 💎 | 📱 | ⚙️ | 💬 |
+| **Sign up** | **Pick plan** | **Install apps** | **Tune settings** | **First chat** |
 
 ---
 

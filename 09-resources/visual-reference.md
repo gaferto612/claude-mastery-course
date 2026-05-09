@@ -78,13 +78,15 @@
 
 ## 📁 The Claude.ai feature universe
 
-| 🏗️ Workspace | 📥 Inputs | 📤 Outputs | 🌐 Live data | 🧠 Memory | 🔌 Connectors | 🎒 Skills |
-|---|---|---|---|---|---|---|
-| Projects | File uploads | Artifacts | Web Search | Cross-chat memory | Google Workspace | PowerPoint |
-| Custom Instructions | Images | Code Execution | Research Mode | Past chat search | GitHub | Excel |
-| Style Presets | PDFs | File Creation | | | Slack | Word |
-| | | | | | Notion | Custom Skills |
-| | | | | | 40+ more | |
+| Area | What's in it |
+|---|---|
+| 🏗️ **Workspace** | Projects · Custom Instructions · Style Presets |
+| 📥 **Inputs** | File Uploads · Images · PDFs · Spreadsheets |
+| 📤 **Outputs** | Artifacts · Code Execution · File Creation |
+| 🌐 **Live data** | Web Search · Research Mode |
+| 🧠 **Memory** | Cross-chat memory · Past chat search |
+| 🔌 **Connectors** | Google Workspace · GitHub · Slack · Notion · 40+ more |
+| 🎒 **Skills** | PowerPoint · Excel · Word · Custom Skills |
 
 ---
 

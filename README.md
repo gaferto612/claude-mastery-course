@@ -33,14 +33,14 @@ This is your end-to-end guide to **mastering Claude**. Whether you're a curious 
 
 ### What you'll learn
 
-| 🌱 **Foundations** | 💡 **Prompting** | 🛠️ **Features** | ⚙️ **Building** | 🧪 **Advanced** | 🏗️ **Projects** |
-|---|---|---|---|---|---|
-| What is Claude? | 6 ingredients | Projects | Claude Code | Extended thinking | CLI Chatbot |
-| Model family | 10 techniques | Artifacts | Python SDK | Agents | Doc Q&A |
-| Ethics & limits | 30 patterns | Files | TypeScript SDK | MCP | Research Agent |
-| When to use it | Decision trees | Connectors | Tool use | Computer use | Code Reviewer |
-| | | Memory | Vision | Evals | |
-| | | Skills | Streaming | | |
+| Topic | What's in it |
+|---|---|
+| 🌱 **Foundations** | What is Claude? · Model family · Ethics & limits · When to use it |
+| 💡 **Prompting** | 6 ingredients · 10 techniques · 30 patterns · Decision trees |
+| 🛠️ **Features** | Projects · Artifacts · Files · Connectors · Memory · Skills |
+| ⚙️ **Building** | Claude Code · Python SDK · TypeScript SDK · Tool use · Vision · Streaming |
+| 🧪 **Advanced** | Extended thinking · Agents · MCP · Computer use · Evals |
+| 🏗️ **Projects** | CLI Chatbot · Doc Q&A · Research Agent · Code Reviewer |
 
 ---
 

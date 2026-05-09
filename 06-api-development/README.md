@@ -1,8 +1,16 @@
-# Module 06 — Building with the Claude API
+<div align="center">
 
-> **Goal:** Make your first API call, then build with streaming, system prompts, tool use, and vision. Code in Python and TypeScript.
+# ⚙️ Module 06 — Building with the Claude API
 
-⏱️ **~45 minutes** &nbsp;&nbsp;&nbsp; 📊 **6 diagrams** &nbsp;&nbsp;&nbsp; 💻 **9 runnable examples** &nbsp;&nbsp;&nbsp; 🎯 **API key required**
+[![Module](https://img.shields.io/badge/06-API-4DABF7?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_45_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🛠️_Developer-FF6B9D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Examples](https://img.shields.io/badge/💻_9_examples-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](./examples/)
+[![Key](https://img.shields.io/badge/🔑_API_key-FFD23F?style=for-the-badge&labelColor=2a1f1a)](https://console.anthropic.com)
+
+***Goal:** make your first API call, then build with streaming, system prompts, tool use, and vision. Python + TypeScript.*
+
+</div>
 
 ---
 
@@ -34,7 +42,8 @@
 export ANTHROPIC_API_KEY="sk-ant-..."
 ```
 
-> ⚠️ **Never commit API keys to git.** Use `.env` files or a secret manager. There are bots that scan public repos within minutes.
+> [!WARNING]
+> **Never commit API keys to git.** Use `.env` files or a secret manager. There are bots that scan public repos within minutes.
 
 ---
 

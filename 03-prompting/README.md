@@ -1,8 +1,15 @@
-# Module 03 — Prompt Engineering with Claude
+<div align="center">
 
-> **Goal:** Move from "vibes-based" prompting to a repeatable system that gets great output from Claude every time.
+# 💡 Module 03 — Prompt Engineering
 
-⏱️ **~25 minutes** &nbsp;&nbsp;&nbsp; 📊 **5 diagrams** &nbsp;&nbsp;&nbsp; 🎯 **The most important module in the course**
+[![Module](https://img.shields.io/badge/03-Prompting-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_25_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🌱_Beginner-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Star](https://img.shields.io/badge/⭐_Most_important-FFD23F?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***Goal:** move from "vibes-based" prompting to a repeatable system that produces great output every time.*
+
+</div>
 
 ---
 
@@ -43,7 +50,8 @@ Almost every excellent prompt contains some mix of these six ingredients. **Memo
 | 📦 **Format** | Output shape | *"Return as a markdown table with: Tier \| Price \| Top 3 features."* |
 | 🌟 **Examples** | Show, don't tell | *"Match how Stripe writes — clean, technical, confident."* |
 
-> 💡 Not every prompt needs all six. But if you find Claude's output disappointing, **look at this list** and ask: *which ingredient did I leave out?*
+> [!TIP]
+> Not every prompt needs all six. But if you find Claude's output disappointing, **look at this list** and ask: *which ingredient did I leave out?*
 
 ---
 
@@ -324,7 +332,8 @@ You should now be able to:
 - [ ] Apply **chain-of-thought**, **few-shot**, and **role** prompting
 - [ ] Diagnose why a prompt isn't working (use the decision tree!)
 
-> 🏋️ **Exercise:** Take a prompt you used last week and **rewrite it** using everything from this module. Compare the outputs side-by-side.
+> [!IMPORTANT]
+> **🏋️ Exercise:** Take a prompt you used last week and **rewrite it** using everything from this module. Compare the outputs side-by-side.
 
 > 👉 **Next up:** [Module 04 — Claude.ai Features](../04-features/) — Projects, Artifacts, Files, Memory, and Connectors.
 

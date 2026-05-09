@@ -1,8 +1,17 @@
-# Module 08 — Real-World Projects
+<div align="center">
 
-> **Goal:** Build four end-to-end projects that show how everything in this course comes together.
+# 🏗️ Module 08 — Real-World Projects
 
-⏱️ **~2-3 hours** &nbsp;&nbsp;&nbsp; 📊 **4 architecture diagrams** &nbsp;&nbsp;&nbsp; 💻 **4 standalone scripts**
+[![Module](https://img.shields.io/badge/08-Projects-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_2--3_hr-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🚀_Advanced-FF6B9D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Scripts](https://img.shields.io/badge/💻_4_scripts-4DABF7?style=for-the-badge&labelColor=2a1f1a)](./code/)
+
+***Goal:** build four end-to-end projects that bring everything together.*
+
+</div>
+
+---
 
 Each project is small enough to finish in an afternoon but realistic enough to extend into something you'd actually use.
 

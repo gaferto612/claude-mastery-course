@@ -1,9 +1,21 @@
-# Module 09 — Resources, Cheat Sheets & Glossary
+<div align="center">
 
-The closing reference module. Bookmark this one.
+# 📚 Module 09 — Resources, Cheat Sheets & Glossary
 
-🎨 **Looking for visuals?** → [**Visual Reference**](./visual-reference.md) — every diagram from the course in one page
-🖥️ **Want it interactive?** → Open [`../hub.html`](../hub.html) in your browser
+[![Module](https://img.shields.io/badge/09-Resources-D97757?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Reference](https://img.shields.io/badge/📖_Reference-FFD23F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/✨_All_levels-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***The closing reference module — bookmark this one.***
+
+</div>
+
+---
+
+> [!TIP]
+> 🎨 **Looking for visuals?** → [**Visual Reference**](./visual-reference.md) — every diagram from the course in one page
+>
+> 🖥️ **Want it interactive?** → Open [`../hub.html`](../hub.html) in your browser
 
 ---
 

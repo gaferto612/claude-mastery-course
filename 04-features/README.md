@@ -1,8 +1,15 @@
-# Module 04 — Mastering Claude.ai Features
+<div align="center">
 
-> **Goal:** Go beyond chat. Learn the features that make Claude.ai feel less like a chatbot and more like a workspace.
+# 🛠️ Module 04 — Claude.ai Features
 
-⏱️ **~20 minutes** &nbsp;&nbsp;&nbsp; 📊 **4 diagrams** &nbsp;&nbsp;&nbsp; 🎯 **Pro account recommended**
+[![Module](https://img.shields.io/badge/04-Features-FF6B9D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_20_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🌿_Intermediate-FFD23F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Pro](https://img.shields.io/badge/💎_Pro_recommended-B197FC?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***Goal:** go beyond chat — learn the features that make Claude.ai a workspace, not a chatbot.*
+
+</div>
 
 ---
 
@@ -62,7 +69,8 @@ What's in this project:
 - [list key files and what they are]
 ```
 
-> ⚡ **Pro move:** Periodically ask the chat *"Based on what's in this project, what's the best next thing for me to work on?"* — you'll be surprised.
+> [!TIP]
+> **⚡ Pro move:** Periodically ask the chat *"Based on what's in this project, what's the best next thing for me to work on?"* — you'll be surprised.
 
 ---
 
@@ -128,7 +136,8 @@ Build me a single-page React app: a habit tracker for the next 30 days.
 | 🖼️ | *"Here's a screenshot of my dashboard. What's the most concerning metric?"* |
 | ✍️ | *"Here's my draft. Read it once, then list the 5 weakest sentences with rewrites."* |
 
-> 💡 **Pro move:** combine Files + Projects. Upload reference material into the Project once, then start fresh chats that all have access — no re-uploading.
+> [!TIP]
+> **💡 Pro move:** combine Files + Projects. Upload reference material into the Project once, then start fresh chats that all have access — no re-uploading.
 
 ---
 

@@ -1,8 +1,15 @@
-# Module 05 — Claude Code: Agentic Coding from Your Terminal
+<div align="center">
 
-> **Goal:** Install Claude Code, run your first session, and use it as a real coding partner on a real project.
+# 💻 Module 05 — Claude Code
 
-⏱️ **~30 minutes** &nbsp;&nbsp;&nbsp; 📊 **3 diagrams** &nbsp;&nbsp;&nbsp; 🎯 **Requires Node.js + a real codebase**
+[![Module](https://img.shields.io/badge/05-Claude_Code-B197FC?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_30_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🌿_Intermediate-FFD23F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Requires](https://img.shields.io/badge/📦_Node.js_18%2B-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***Goal:** install Claude Code, run your first session, use it as a real coding partner on a real project.*
+
+</div>
 
 ---
 
@@ -239,7 +246,8 @@ Claude wants to run a command, edit a file, or make a network request
                           ✏️ Execute   🚫 Skip & explain
 ```
 
-> 🛑 **Never run Claude Code on a directory you can't afford to lose.** Use git. Commit before big agentic runs. You'll thank yourself.
+> [!CAUTION]
+> **Never run Claude Code on a directory you can't afford to lose.** Use git. Commit before big agentic runs. You'll thank yourself.
 
 ---
 

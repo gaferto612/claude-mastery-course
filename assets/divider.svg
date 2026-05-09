@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 24" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD23F"/>
+      <stop offset="33%" stop-color="#FF7A4D"/>
+      <stop offset="66%" stop-color="#FF6B9D"/>
+      <stop offset="100%" stop-color="#B197FC"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="9" width="1200" height="6" rx="3" fill="url(#rainbow)"/>
+  <circle cx="200" cy="12" r="6" fill="#FFD23F"/>
+  <circle cx="500" cy="12" r="6" fill="#FF7A4D"/>
+  <circle cx="800" cy="12" r="6" fill="#FF6B9D"/>
+  <circle cx="1000" cy="12" r="6" fill="#B197FC"/>
+</svg>

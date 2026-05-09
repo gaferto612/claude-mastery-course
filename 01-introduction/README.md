@@ -1,8 +1,15 @@
-# Module 01 — Introduction to Claude
+<div align="center">
 
-> **Goal:** By the end of this module, you'll know what Claude is, how the model family works, and when to reach for Claude versus other AI tools.
+# 👋 Module 01 — Introduction to Claude
 
-⏱️ **~10 minutes** &nbsp;&nbsp;&nbsp; 📊 **3 diagrams** &nbsp;&nbsp;&nbsp; 🎯 **No setup required**
+[![Module](https://img.shields.io/badge/01-Introduction-FFD23F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_10_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🌱_Beginner-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Setup](https://img.shields.io/badge/🎯_No_setup-4DABF7?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***Goal:** know what Claude is, how the model family works, and when to reach for it.*
+
+</div>
 
 ---
 
@@ -59,7 +66,8 @@ Anthropic releases models in three "sizes" named after literary forms — each b
    Pick Haiku when: volume is huge, latency is tight, cost matters
 ```
 
-> 💡 The current frontier model is **Claude Opus 4.7**, with **Sonnet 4.6** and **Haiku 4.5** rounding out the family. Anthropic regularly releases new versions — always [check the official docs](https://docs.claude.com/en/docs/about-claude/models/overview) for the latest.
+> [!NOTE]
+> The current frontier model is **Claude Opus 4.7**, with **Sonnet 4.6** and **Haiku 4.5** rounding out the family. Anthropic regularly releases new versions — always [check the official docs](https://docs.claude.com/en/docs/about-claude/models/overview) for the latest.
 
 ### Model versioning, briefly
 

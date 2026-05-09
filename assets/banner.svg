@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" role="img" aria-label="Claude Mastery banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD23F"/>
+      <stop offset="35%" stop-color="#FF7A4D"/>
+      <stop offset="70%" stop-color="#FF6B9D"/>
+      <stop offset="100%" stop-color="#B197FC"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a1f1a"/>
+      <stop offset="100%" stop-color="#3a2a22"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="280" fill="url(#bg)"/>
+
+  <!-- decorative blobs -->
+  <circle cx="100" cy="60" r="60" fill="#FFD23F" opacity="0.45"/>
+  <circle cx="1100" cy="220" r="80" fill="#FF6B9D" opacity="0.4"/>
+  <circle cx="950" cy="40" r="35" fill="#FFFFFF" opacity="0.35"/>
+  <circle cx="200" cy="220" r="22" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="1050" cy="140" r="14" fill="#FFFFFF" opacity="0.5"/>
+
+  <!-- sparkles -->
+  <text x="80" y="200" font-size="32" opacity="0.8">✨</text>
+  <text x="1080" y="80" font-size="40" opacity="0.85">⭐</text>
+  <text x="840" y="240" font-size="28" opacity="0.75">💫</text>
+  <text x="280" y="80" font-size="30" opacity="0.7">🌟</text>
+
+  <!-- title -->
+  <text x="600" y="135" text-anchor="middle"
+        font-family="'Fredoka','Quicksand','Trebuchet MS',sans-serif"
+        font-weight="700" font-size="84"
+        fill="url(#title)" letter-spacing="-2">
+    Claude Mastery
+  </text>
+
+  <!-- subtitle pill -->
+  <rect x="380" y="170" width="440" height="48" rx="24" fill="#2a1f1a"/>
+  <text x="600" y="201" text-anchor="middle"
+        font-family="'Quicksand','Trebuchet MS',sans-serif"
+        font-weight="600" font-size="20" fill="#FFD23F">
+    🚀 from chat to production · 9 modules · all free
+  </text>
+
+  <!-- emoji icons row -->
+  <text x="600" y="260" text-anchor="middle" font-size="28" letter-spacing="14">
+    💬 💻 ⚙️ 🧠 🛠️ 🏗️
+  </text>
+</svg>

@@ -1,8 +1,15 @@
-# Module 02 — Getting Started with Claude
+<div align="center">
 
-> **Goal:** Get an account, understand the plans, install the apps, and have your first real conversation.
+# 🚀 Module 02 — Getting Started with Claude
 
-⏱️ **~15 minutes** &nbsp;&nbsp;&nbsp; 📊 **2 diagrams** &nbsp;&nbsp;&nbsp; 🎯 **Free account is enough**
+[![Module](https://img.shields.io/badge/02-Getting_Started-FF9F43?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_15_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🌱_Beginner-6BCF7F?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Account](https://img.shields.io/badge/🆓_Free_account-4DABF7?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***Goal:** make an account, install the apps, have your first real conversation.*
+
+</div>
 
 ---
 

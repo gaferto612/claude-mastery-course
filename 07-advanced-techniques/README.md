@@ -1,8 +1,15 @@
-# Module 07 — Advanced Techniques
+<div align="center">
 
-> **Goal:** Push past basic chat and basic API. Extended thinking, agents, MCP, computer use, evaluation, and the patterns the pros use.
+# 🧪 Module 07 — Advanced Techniques
 
-⏱️ **~30 minutes** &nbsp;&nbsp;&nbsp; 📊 **5 diagrams** &nbsp;&nbsp;&nbsp; 🎯 **Modules 03 + 06 recommended first**
+[![Module](https://img.shields.io/badge/07-Advanced-4ECDC4?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Time](https://img.shields.io/badge/⏱️_30_min-FF7A4D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Level](https://img.shields.io/badge/🚀_Advanced-FF6B9D?style=for-the-badge&labelColor=2a1f1a)](#)
+[![Prereq](https://img.shields.io/badge/📚_Modules_03_%2B_06_first-B197FC?style=for-the-badge&labelColor=2a1f1a)](#)
+
+***Goal:** push past basic chat and basic API. Extended thinking, agents, MCP, computer use, evaluation — the patterns the pros use.*
+
+</div>
 
 ---
 

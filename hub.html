@@ -3,292 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude Mastery — Interactive Course Hub</title>
+<title>Claude Mastery — Let's go! 🚀</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a1a;
-    --paper: #faf6f1;
-    --paper-2: #f5ede2;
-    --accent: #d97757;
-    --accent-dark: #b85e44;
-    --accent-light: #ffe5d1;
-    --muted: #6b6b6b;
-    --grid: #e8dfd2;
-    --success: #4a7c59;
-    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(217,119,87,0.08);
+    --ink: #2a1f1a;
+    --paper: #fff8f0;
+    --paper-2: #ffeed8;
+    --accent: #ff7a4d;
+    --accent-dark: #e85a2b;
+    --accent-light: #ffd9bc;
+    --pink: #ff6b9d;
+    --yellow: #ffd23f;
+    --green: #6bcf7f;
+    --blue: #4dabf7;
+    --purple: #b197fc;
+    --muted: #8a7568;
+    --shadow: 0 4px 0 rgba(42,31,26,0.08), 0 8px 24px rgba(255,122,77,0.15);
+    --shadow-pop: 0 6px 0 rgba(42,31,26,0.12), 0 14px 30px rgba(255,122,77,0.22);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
     background-image:
-      radial-gradient(circle at 20% 0%, rgba(217,119,87,0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 100%, rgba(217,119,87,0.04) 0%, transparent 50%);
+      radial-gradient(circle at 10% 0%, rgba(255,210,63,0.35) 0%, transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(255,107,157,0.25) 0%, transparent 40%),
+      radial-gradient(circle at 50% 100%, rgba(177,151,252,0.2) 0%, transparent 50%);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
-  .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  /* SQUIGGLE DECORATIONS */
+  .blob {
+    position: absolute; border-radius: 50%; filter: blur(40px);
+    pointer-events: none; opacity: 0.5; z-index: 0;
+  }
 
   /* HEADER */
-  header { padding: 60px 0 40px; border-bottom: 1px solid var(--grid); position: relative; }
-  header::before {
-    content: ''; position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
-    width: 80%; max-width: 600px; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4;
+  header {
+    padding: 60px 0 50px; position: relative; text-align: center;
   }
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 16px;
+  .badge-row {
+    display: flex; gap: 8px; justify-content: center;
+    margin-bottom: 24px; flex-wrap: wrap;
   }
+  .badge {
+    background: white; border: 2px solid var(--ink);
+    padding: 6px 14px; border-radius: 100px;
+    font-family: 'Fredoka', sans-serif; font-weight: 600;
+    font-size: 13px;
+    box-shadow: 0 3px 0 var(--ink);
+    transform: rotate(-2deg);
+    transition: transform 0.2s;
+  }
+  .badge:nth-child(2) { transform: rotate(1deg); background: var(--yellow); }
+  .badge:nth-child(3) { transform: rotate(-1deg); background: var(--pink); color: white; }
+  .badge:nth-child(4) { transform: rotate(2deg); background: var(--green); color: white; }
+  .badge:hover { transform: rotate(0deg) scale(1.05); }
+
   h1 {
-    font-family: 'Fraunces', serif; font-size: clamp(40px, 7vw, 84px);
-    line-height: 0.95; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 24px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(48px, 9vw, 110px);
+    line-height: 0.95; font-weight: 700;
+    letter-spacing: -0.03em; margin-bottom: 20px;
+    color: var(--ink);
   }
-  h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  h1 .word-1 { color: var(--accent); display: inline-block; transform: rotate(-2deg); }
+  h1 .word-2 { color: var(--ink); display: inline-block; }
+  h1 .sparkle { display: inline-block; animation: wiggle 2s ease-in-out infinite; }
+
   .lede {
-    font-family: 'Fraunces', serif; font-size: 22px;
-    color: var(--muted); max-width: 720px; line-height: 1.45;
+    font-size: 20px;
+    color: var(--muted); max-width: 620px; margin: 0 auto 40px;
+    line-height: 1.5; font-weight: 500;
   }
+
+  .cta-row {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  .cta {
+    background: var(--accent); color: white;
+    border: 3px solid var(--ink); padding: 14px 28px;
+    border-radius: 100px; text-decoration: none;
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 17px;
+    box-shadow: 0 5px 0 var(--ink);
+    transition: all 0.15s;
+    display: inline-block;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--ink); }
+  .cta:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--ink); }
+  .cta.secondary { background: white; color: var(--ink); }
+  .cta.fun { background: var(--yellow); color: var(--ink); }
 
   /* STATS */
   .stats {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-    background: var(--grid); border: 1px solid var(--grid);
-    margin: 48px 0 0; border-radius: 4px; overflow: hidden;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    margin-bottom: 20px;
   }
-  .stat { background: var(--paper); padding: 24px; text-align: center; }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    background: white; padding: 24px 16px; text-align: center;
+    border: 3px solid var(--ink); border-radius: 24px;
+    box-shadow: 0 5px 0 var(--ink);
+    transition: transform 0.2s;
+  }
+  .stat:nth-child(1) { background: #fff5e0; }
+  .stat:nth-child(2) { background: #ffe0e8; }
+  .stat:nth-child(3) { background: #e0f4ff; }
+  .stat:nth-child(4) { background: #e6f7e9; }
+  .stat:hover { transform: translateY(-4px) rotate(-1deg); }
   .stat-num {
-    font-family: 'Fraunces', serif; font-size: 42px; font-weight: 800;
-    color: var(--ink); letter-spacing: -0.02em; line-height: 1;
+    font-family: 'Fredoka', sans-serif; font-size: 48px; font-weight: 700;
+    color: var(--ink); line-height: 1;
   }
   .stat-label {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-top: 8px;
+    font-size: 13px; font-weight: 600;
+    color: var(--muted); margin-top: 8px;
   }
+  .stat-emoji { font-size: 32px; margin-bottom: 4px; display: block; }
 
   /* SECTION */
-  section { padding: 80px 0; border-bottom: 1px solid var(--grid); }
-  .section-head { margin-bottom: 48px; }
-  .section-num {
-    font-family: 'JetBrains Mono', monospace; font-size: 13px;
-    color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+  section { padding: 70px 0; position: relative; }
+  .section-head { margin-bottom: 40px; text-align: center; }
+  .section-tag {
+    display: inline-block;
+    background: var(--ink); color: var(--paper);
+    padding: 6px 16px; border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700;
+    margin-bottom: 16px;
+    transform: rotate(-1deg);
   }
   .section-title {
-    font-family: 'Fraunces', serif; font-size: clamp(32px, 4.5vw, 52px);
-    font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; max-width: 800px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700; line-height: 1.05; max-width: 800px; margin: 0 auto;
+    letter-spacing: -0.02em;
+  }
+  .section-title .hl {
+    background: var(--yellow); padding: 0 8px;
+    border-radius: 8px; display: inline-block;
+    transform: rotate(-1deg);
   }
   .section-sub {
-    font-family: 'Fraunces', serif; font-size: 19px; color: var(--muted);
-    margin-top: 16px; max-width: 720px; line-height: 1.5;
+    font-size: 18px; color: var(--muted);
+    margin: 18px auto 0; max-width: 620px; line-height: 1.5;
+    font-weight: 500;
   }
-
-  /* MODULES */
-  .modules {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px;
-  }
-  .module {
-    background: white; border: 1px solid var(--grid); border-radius: 8px;
-    padding: 28px; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative; overflow: hidden;
-  }
-  .module::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--accent); transform: scaleX(0); transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  .module:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--accent-light); }
-  .module:hover::before { transform: scaleX(1); }
-  .module.completed { background: var(--accent-light); border-color: var(--accent); }
-  .module.completed::after {
-    content: '✓'; position: absolute; top: 16px; right: 16px;
-    width: 28px; height: 28px; background: var(--accent); color: white;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 14px;
-  }
-  .module-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
-  .module-num {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    color: var(--accent); letter-spacing: 1.5px; background: var(--accent-light);
-    padding: 4px 8px; border-radius: 3px;
-  }
-  .module-icon { font-size: 28px; }
-  .module-title {
-    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700;
-    margin-bottom: 8px; letter-spacing: -0.01em; line-height: 1.2;
-  }
-  .module-desc { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
-  .module-meta {
-    display: flex; gap: 12px; font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--muted);
-  }
-  .module-meta span { background: var(--paper-2); padding: 4px 8px; border-radius: 3px; }
-  .module-actions { display: flex; gap: 8px; margin-top: 16px; }
-  .module-link {
-    flex: 1; text-align: center; padding: 8px;
-    background: var(--paper-2); border: 1px solid var(--grid); border-radius: 4px;
-    text-decoration: none; color: var(--ink); font-size: 12px;
-    font-family: 'JetBrains Mono', monospace; transition: all 0.2s;
-  }
-  .module-link:hover { background: var(--accent); color: white; border-color: var(--accent); }
-  .module-toggle {
-    padding: 8px 14px; background: white; border: 1px solid var(--grid);
-    border-radius: 4px; cursor: pointer; font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--muted); transition: all 0.2s;
-  }
-  .module-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
   /* PROGRESS */
   .progress-wrap {
-    background: white; border: 1px solid var(--grid); border-radius: 8px;
-    padding: 20px 24px; margin-bottom: 24px;
-    display: flex; align-items: center; gap: 24px;
+    background: white; border: 3px solid var(--ink); border-radius: 24px;
+    padding: 22px 26px; margin-bottom: 32px;
+    box-shadow: 0 5px 0 var(--ink);
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
   }
-  .progress-info { flex-shrink: 0; }
+  .progress-info { flex-shrink: 0; display: flex; align-items: center; gap: 12px; }
+  .progress-emoji { font-size: 36px; }
   .progress-info .label {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted);
+    font-size: 12px; font-weight: 700; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1.5px;
   }
   .progress-info .pct {
-    font-family: 'Fraunces', serif; font-size: 36px; font-weight: 800;
-    line-height: 1; margin-top: 2px;
+    font-family: 'Fredoka', sans-serif; font-size: 32px; font-weight: 700;
+    line-height: 1; color: var(--accent);
   }
   .progress-bar {
-    flex-grow: 1; height: 10px; background: var(--paper-2);
-    border-radius: 5px; overflow: hidden;
+    flex-grow: 1; height: 16px; background: var(--paper-2);
+    border-radius: 100px; overflow: hidden; min-width: 180px;
+    border: 2px solid var(--ink);
   }
   .progress-fill {
-    height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-    border-radius: 5px; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--pink), var(--accent), var(--yellow));
+    background-size: 300% 100%;
+    animation: shimmer 3s linear infinite;
+    transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); width: 0%;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
   }
   .progress-reset {
-    background: none; border: 1px solid var(--grid); padding: 8px 14px;
-    border-radius: 4px; cursor: pointer; font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--muted); transition: all 0.2s;
+    background: white; border: 2px solid var(--ink); padding: 8px 16px;
+    border-radius: 100px; cursor: pointer;
+    font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 600;
+    color: var(--ink); transition: all 0.15s;
+    box-shadow: 0 3px 0 var(--ink);
   }
-  .progress-reset:hover { border-color: var(--accent); color: var(--accent); }
+  .progress-reset:hover { background: var(--pink); color: white; transform: translateY(-1px); box-shadow: 0 4px 0 var(--ink); }
+
+  /* MODULES */
+  .modules {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px;
+  }
+  .module {
+    background: white; border: 3px solid var(--ink); border-radius: 24px;
+    padding: 24px; cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative; overflow: hidden;
+    box-shadow: 0 5px 0 var(--ink);
+  }
+  .module:nth-child(6n+1) { background: #fff5e0; }
+  .module:nth-child(6n+2) { background: #ffe0e8; }
+  .module:nth-child(6n+3) { background: #e0f4ff; }
+  .module:nth-child(6n+4) { background: #e6f7e9; }
+  .module:nth-child(6n+5) { background: #f0e6ff; }
+  .module:nth-child(6n+6) { background: #fff5e0; }
+  .module:hover { transform: translateY(-6px) rotate(-0.5deg); box-shadow: 0 11px 0 var(--ink); }
+  .module.completed { background: var(--ink) !important; color: var(--paper); }
+  .module.completed .module-desc, .module.completed .module-meta span { color: rgba(255,248,240,0.75); }
+  .module.completed::after {
+    content: '🎉'; position: absolute; top: 14px; right: 14px;
+    font-size: 28px;
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes pop {
+    0% { transform: scale(0) rotate(0deg); }
+    100% { transform: scale(1) rotate(20deg); }
+  }
+  .module-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .module-num {
+    font-family: 'Fredoka', sans-serif; font-size: 14px; font-weight: 700;
+    color: var(--ink); background: white;
+    padding: 4px 10px; border-radius: 100px;
+    border: 2px solid var(--ink);
+  }
+  .module.completed .module-num { background: var(--yellow); color: var(--ink); }
+  .module-icon { font-size: 36px; }
+  .module-title {
+    font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700;
+    margin-bottom: 8px; line-height: 1.2;
+  }
+  .module-desc { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; font-weight: 500; }
+  .module-meta {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .module-meta span {
+    background: rgba(255,255,255,0.7); padding: 4px 10px;
+    border-radius: 100px; border: 1.5px solid var(--ink);
+  }
+  .module.completed .module-meta span { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); }
+  .module-actions { display: flex; gap: 8px; }
+  .module-link {
+    flex: 1; text-align: center; padding: 10px;
+    background: var(--ink); border: 2px solid var(--ink); border-radius: 100px;
+    text-decoration: none; color: var(--paper); font-size: 13px; font-weight: 700;
+    transition: all 0.15s;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .module-link:hover { background: var(--accent); border-color: var(--ink); }
+  .module.completed .module-link { background: var(--accent); }
+  .module-toggle {
+    padding: 10px 14px; background: white; border: 2px solid var(--ink);
+    border-radius: 100px; cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px; font-weight: 700; color: var(--ink);
+    transition: all 0.15s;
+  }
+  .module-toggle:hover { background: var(--yellow); }
+  .module.completed .module-toggle { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
 
   /* PROMPT BUILDER */
-  .builder { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .builder { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 900px) { .builder { grid-template-columns: 1fr; } }
   .builder-form, .builder-output {
-    background: white; border: 1px solid var(--grid); border-radius: 8px; padding: 28px;
+    background: white; border: 3px solid var(--ink); border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 5px 0 var(--ink);
   }
-  .builder-output { background: var(--ink); color: var(--paper); position: sticky; top: 24px; align-self: start; }
-  .field { margin-bottom: 20px; }
-  .field-label { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-  .field-icon { font-size: 18px; }
+  .builder-output {
+    background: var(--ink); color: var(--paper);
+    position: sticky; top: 24px; align-self: start;
+  }
+  .field { margin-bottom: 18px; }
+  .field-label { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .field-icon { font-size: 22px; }
   .field-name {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700;
+    font-family: 'Fredoka', sans-serif; font-size: 15px;
+    font-weight: 600; color: var(--ink);
   }
   .field-hint {
     font-size: 12px; color: var(--muted); margin-left: auto;
-    font-family: 'Inter', sans-serif; text-transform: none; letter-spacing: 0;
+    font-weight: 500;
   }
   .field input, .field textarea {
-    width: 100%; padding: 10px 14px; border: 1px solid var(--grid); border-radius: 4px;
-    font-family: 'Inter', sans-serif; font-size: 14px;
-    background: var(--paper); color: var(--ink); transition: border-color 0.2s;
+    width: 100%; padding: 12px 16px;
+    border: 2px solid var(--ink); border-radius: 14px;
+    font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 500;
+    background: var(--paper); color: var(--ink); transition: all 0.15s;
   }
-  .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
-  .field textarea { min-height: 60px; resize: vertical; font-family: 'Inter', sans-serif; }
+  .field input:focus, .field textarea:focus {
+    outline: none; background: white;
+    box-shadow: 0 4px 0 var(--accent);
+    transform: translateY(-2px);
+  }
+  .field textarea { min-height: 60px; resize: vertical; }
   .builder-output h3 {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 16px;
+    font-family: 'Fredoka', sans-serif; font-size: 18px;
+    color: var(--yellow); margin-bottom: 16px;
+    font-weight: 600;
   }
   .builder-output pre {
     font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6;
     white-space: pre-wrap; word-wrap: break-word; color: var(--paper);
     max-height: 400px; overflow-y: auto;
+    background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px;
   }
   .builder-output pre.empty { color: rgba(250,246,241,0.4); font-style: italic; }
   .copy-btn {
-    margin-top: 16px; background: var(--accent); color: white; border: none;
-    padding: 10px 18px; border-radius: 4px; cursor: pointer;
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;
-    transition: background 0.2s;
+    margin-top: 16px; background: var(--yellow); color: var(--ink);
+    border: 2px solid var(--paper); padding: 12px 22px;
+    border-radius: 100px; cursor: pointer;
+    font-family: 'Fredoka', sans-serif; font-size: 14px; font-weight: 600;
+    transition: all 0.15s;
   }
-  .copy-btn:hover { background: var(--accent-dark); }
-  .copy-btn.copied { background: var(--success); }
+  .copy-btn:hover { background: var(--pink); color: white; transform: translateY(-2px); }
+  .copy-btn.copied { background: var(--green); color: white; }
 
   /* MODEL PICKER */
-  .picker { background: white; border: 1px solid var(--grid); border-radius: 8px; padding: 32px; }
-  .picker-questions { display: grid; gap: 24px; }
-  .question { border-bottom: 1px dashed var(--grid); padding-bottom: 24px; }
+  .picker {
+    background: white; border: 3px solid var(--ink); border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 5px 0 var(--ink);
+  }
+  .picker-questions { display: grid; gap: 28px; }
+  .question { padding-bottom: 24px; border-bottom: 2px dashed var(--paper-2); }
   .question:last-child { border-bottom: none; padding-bottom: 0; }
   .question-text {
-    font-family: 'Fraunces', serif; font-size: 20px;
-    margin-bottom: 14px; font-weight: 600; letter-spacing: -0.01em;
+    font-family: 'Fredoka', sans-serif; font-size: 20px;
+    margin-bottom: 14px; font-weight: 600;
   }
-  .options { display: flex; gap: 8px; flex-wrap: wrap; }
+  .options { display: flex; gap: 10px; flex-wrap: wrap; }
   .option {
-    padding: 10px 16px; border: 1px solid var(--grid); background: var(--paper);
-    border-radius: 4px; cursor: pointer; font-size: 13px;
-    transition: all 0.2s; font-family: 'Inter', sans-serif;
+    padding: 10px 18px;
+    border: 2px solid var(--ink); background: white;
+    border-radius: 100px; cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px; font-weight: 600;
+    transition: all 0.15s;
+    box-shadow: 0 3px 0 var(--ink);
   }
-  .option:hover { border-color: var(--accent); }
-  .option.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .option:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ink); background: var(--yellow); }
+  .option.active {
+    background: var(--accent); color: white;
+    transform: translateY(2px); box-shadow: 0 1px 0 var(--ink);
+  }
   .picker-result {
-    margin-top: 32px; padding: 28px; background: var(--paper-2);
-    border-radius: 6px; border-left: 4px solid var(--accent);
+    margin-top: 32px; padding: 28px;
+    background: linear-gradient(135deg, var(--paper-2), #ffe0e8);
+    border-radius: 20px; border: 3px solid var(--ink);
+    box-shadow: 0 5px 0 var(--ink);
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   .picker-result .verdict {
-    font-family: 'Fraunces', serif; font-size: 32px; font-weight: 800;
-    color: var(--ink); letter-spacing: -0.02em; line-height: 1.1;
+    font-family: 'Fredoka', sans-serif; font-size: 32px; font-weight: 700;
+    color: var(--ink); line-height: 1.1;
   }
-  .picker-result .reasoning { font-size: 15px; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+  .picker-result .reasoning { font-size: 15px; color: var(--ink); margin-top: 12px; line-height: 1.6; opacity: 0.85; font-weight: 500; }
+  .picker-result .reasoning code {
+    background: var(--ink); color: var(--yellow);
+    padding: 2px 8px; border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  }
 
   /* TECHNIQUES */
   .techniques {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
   }
   .technique {
-    background: white; border: 1px solid var(--grid); border-radius: 6px;
-    padding: 24px; transition: all 0.2s; cursor: default;
+    background: white; border: 3px solid var(--ink); border-radius: 20px;
+    padding: 22px; transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 0 var(--ink);
   }
-  .technique:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .technique:nth-child(5n+1) { background: #fff5e0; }
+  .technique:nth-child(5n+2) { background: #ffe0e8; }
+  .technique:nth-child(5n+3) { background: #e0f4ff; }
+  .technique:nth-child(5n+4) { background: #e6f7e9; }
+  .technique:nth-child(5n+5) { background: #f0e6ff; }
+  .technique:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 8px 0 var(--ink); }
   .technique-num {
-    font-family: 'Fraunces', serif; font-size: 42px; font-weight: 800;
-    color: var(--accent); line-height: 1; letter-spacing: -0.03em;
+    font-family: 'Fredoka', sans-serif; font-size: 36px; font-weight: 700;
+    color: var(--accent); line-height: 1;
+    background: var(--ink); display: inline-block;
+    padding: 4px 14px; border-radius: 100px; color: var(--yellow);
+    font-size: 18px;
   }
   .technique-name {
-    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700;
-    margin: 10px 0 8px; letter-spacing: -0.01em;
+    font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 600;
+    margin: 12px 0 8px;
   }
-  .technique-blurb { font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .technique-blurb { font-size: 14px; color: var(--muted); line-height: 1.55; font-weight: 500; }
 
   /* FOOTER */
-  footer { padding: 60px 0 80px; text-align: center; }
+  footer { padding: 80px 0 60px; text-align: center; }
+  .footer-emoji { font-size: 64px; margin-bottom: 20px; display: block; animation: wiggle 3s ease-in-out infinite; }
   .footer-quote {
-    font-family: 'Fraunces', serif; font-style: italic; font-size: 22px;
-    color: var(--muted); max-width: 600px; margin: 0 auto 32px; line-height: 1.4;
+    font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 600;
+    color: var(--ink); max-width: 600px; margin: 0 auto 36px; line-height: 1.4;
   }
+  .footer-quote .hl { background: var(--yellow); padding: 0 6px; border-radius: 6px; }
   .footer-links {
-    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
   }
   .footer-links a {
-    color: var(--ink); text-decoration: none;
-    font-family: 'JetBrains Mono', monospace; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 1.5px;
-    border-bottom: 1px solid var(--accent); padding-bottom: 2px;
-    transition: color 0.2s;
+    background: white; color: var(--ink); text-decoration: none;
+    padding: 10px 20px; border-radius: 100px;
+    border: 2px solid var(--ink);
+    font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 600;
+    box-shadow: 0 3px 0 var(--ink);
+    transition: all 0.15s;
   }
-  .footer-links a:hover { color: var(--accent); }
+  .footer-links a:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ink); background: var(--yellow); }
+  .footer-tiny { font-size: 13px; color: var(--muted); margin-top: 32px; font-weight: 500; }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .fade-up { animation: fadeUp 0.6s ease-out backwards; }
+  .fade-up { animation: fadeUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+  }
+
+  @keyframes confetti-fall {
+    to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+  .confetti {
+    position: fixed; top: -20px; width: 12px; height: 12px;
+    pointer-events: none; z-index: 1000;
+    animation: confetti-fall 2.5s ease-out forwards;
+  }
 </style>
 </head>
 <body>
@@ -296,32 +456,66 @@
 <div class="container">
 
 <header>
-  <div class="eyebrow">— A complete course in 9 modules</div>
-  <h1>Claude<br><em>Mastery</em>.</h1>
-  <p class="lede">From your first chat to building production agents — a hands-on, visually-rich course on getting the most out of Anthropic's Claude.</p>
+  <div class="badge-row">
+    <span class="badge">✨ 9 modules</span>
+    <span class="badge">🎮 Hands-on</span>
+    <span class="badge">💸 100% free</span>
+    <span class="badge">⚡ Beginner friendly</span>
+  </div>
+  <h1>
+    <span class="word-1">Claude</span>
+    <span class="word-2">Mastery</span>
+    <span class="sparkle">✨</span>
+  </h1>
+  <p class="lede">Learn Claude the easy way. Click stuff, build cool things, become unreasonably good at AI. <strong>No PhD required.</strong></p>
+
+  <div class="cta-row">
+    <a href="#modules" class="cta">🚀 Start the course</a>
+    <a href="#builder" class="cta fun">🎯 Try the prompt builder</a>
+    <a href="01-introduction/README.md" class="cta secondary">📖 Open Module 1</a>
+  </div>
 
   <div class="stats">
-    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Modules</div></div>
-    <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Diagrams</div></div>
-    <div class="stat"><div class="stat-num">13</div><div class="stat-label">Code Examples</div></div>
-    <div class="stat"><div class="stat-num">30</div><div class="stat-label">Ready Prompts</div></div>
+    <div class="stat fade-up" style="animation-delay:0.1s">
+      <span class="stat-emoji">📚</span>
+      <div class="stat-num">9</div>
+      <div class="stat-label">Modules</div>
+    </div>
+    <div class="stat fade-up" style="animation-delay:0.2s">
+      <span class="stat-emoji">🎨</span>
+      <div class="stat-num">25+</div>
+      <div class="stat-label">Diagrams</div>
+    </div>
+    <div class="stat fade-up" style="animation-delay:0.3s">
+      <span class="stat-emoji">💻</span>
+      <div class="stat-num">13</div>
+      <div class="stat-label">Code examples</div>
+    </div>
+    <div class="stat fade-up" style="animation-delay:0.4s">
+      <span class="stat-emoji">🎯</span>
+      <div class="stat-num">30</div>
+      <div class="stat-label">Ready prompts</div>
+    </div>
   </div>
 </header>
 
 <section id="modules">
   <div class="section-head">
-    <div class="section-num">01 — Curriculum</div>
-    <h2 class="section-title">Track your progress through the course.</h2>
-    <p class="section-sub">Click "Mark done" on each module as you finish. Your progress is saved in your browser — no account needed.</p>
+    <span class="section-tag">01 · The course</span>
+    <h2 class="section-title">Pick a module and <span class="hl">go!</span></h2>
+    <p class="section-sub">Tick them off as you finish — your progress is saved right in your browser. No sign-up, no nag screens.</p>
   </div>
 
   <div class="progress-wrap">
     <div class="progress-info">
-      <div class="label">Progress</div>
-      <div class="pct" id="progressPct">0%</div>
+      <span class="progress-emoji">🎯</span>
+      <div>
+        <div class="label">Your progress</div>
+        <div class="pct" id="progressPct">0%</div>
+      </div>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <button class="progress-reset" onclick="resetProgress()">Reset</button>
+    <button class="progress-reset" onclick="resetProgress()">↺ Reset</button>
   </div>
 
   <div class="modules" id="modulesGrid"></div>
@@ -329,9 +523,9 @@
 
 <section id="builder">
   <div class="section-head">
-    <div class="section-num">02 — Try it now</div>
-    <h2 class="section-title">The interactive prompt builder.</h2>
-    <p class="section-sub">Fill in the six ingredients of a great prompt. Watch a production-grade prompt assemble in real time. Then copy and paste it into Claude.</p>
+    <span class="section-tag">02 · Try it now</span>
+    <h2 class="section-title">Build a <span class="hl">great prompt</span> in 60 seconds</h2>
+    <p class="section-sub">Fill in the blanks, watch the magic. Then copy and paste straight into Claude.</p>
   </div>
 
   <div class="builder">
@@ -339,15 +533,15 @@
       <div class="field">
         <div class="field-label">
           <span class="field-icon">🎭</span>
-          <span class="field-name">Role</span>
-          <span class="field-hint">Who Claude is</span>
+          <span class="field-name">Who is Claude?</span>
+          <span class="field-hint">Pick a role</span>
         </div>
         <input type="text" id="role" placeholder="e.g. a senior product manager at a fintech startup" oninput="rebuild()">
       </div>
       <div class="field">
         <div class="field-label">
           <span class="field-icon">📋</span>
-          <span class="field-name">Context</span>
+          <span class="field-name">What's going on?</span>
           <span class="field-hint">The situation</span>
         </div>
         <textarea id="context" placeholder="e.g. We're launching a new card product next month, target = young professionals" oninput="rebuild()"></textarea>
@@ -355,31 +549,31 @@
       <div class="field">
         <div class="field-label">
           <span class="field-icon">🎯</span>
-          <span class="field-name">Task</span>
+          <span class="field-name">What do you want?</span>
           <span class="field-hint">The actual ask</span>
         </div>
         <textarea id="task" placeholder="e.g. Draft a 3-tier pricing page" oninput="rebuild()"></textarea>
       </div>
       <div class="field">
         <div class="field-label">
-          <span class="field-icon">📐</span>
-          <span class="field-name">Constraints</span>
-          <span class="field-hint">Boundaries (one per line)</span>
+          <span class="field-icon">🚧</span>
+          <span class="field-name">Any rules?</span>
+          <span class="field-hint">One per line</span>
         </div>
         <textarea id="constraints" placeholder="Max 200 words per tier&#10;No marketing fluff&#10;Use plain English" oninput="rebuild()"></textarea>
       </div>
       <div class="field">
         <div class="field-label">
           <span class="field-icon">📦</span>
-          <span class="field-name">Format</span>
-          <span class="field-hint">Output shape</span>
+          <span class="field-name">What shape?</span>
+          <span class="field-hint">Output format</span>
         </div>
         <input type="text" id="format" placeholder="e.g. markdown table with: Tier | Price | Top 3 features" oninput="rebuild()">
       </div>
       <div class="field">
         <div class="field-label">
           <span class="field-icon">🌟</span>
-          <span class="field-name">Example</span>
+          <span class="field-name">Vibe check?</span>
           <span class="field-hint">Tone reference (optional)</span>
         </div>
         <input type="text" id="example" placeholder="e.g. Match how Stripe writes — clean, technical, confident" oninput="rebuild()">
@@ -387,44 +581,44 @@
     </div>
 
     <div class="builder-output">
-      <h3>→ Your prompt</h3>
-      <pre id="output" class="empty">Fill in the fields → your prompt will assemble here in real time…</pre>
-      <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">Copy prompt</button>
+      <h3>🎁 Your prompt</h3>
+      <pre id="output" class="empty">Start filling things in… your prompt magically appears here ✨</pre>
+      <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">📋 Copy prompt</button>
     </div>
   </div>
 </section>
 
 <section id="picker">
   <div class="section-head">
-    <div class="section-num">03 — Decision helper</div>
-    <h2 class="section-title">Which Claude model should I use?</h2>
-    <p class="section-sub">Answer three questions. Get a recommendation tailored to your situation.</p>
+    <span class="section-tag">03 · Decision helper</span>
+    <h2 class="section-title">Which model should I <span class="hl">use?</span></h2>
+    <p class="section-sub">Three quick questions. Answer honestly — we'll pick the right Claude for the job. 🎲</p>
   </div>
 
   <div class="picker">
     <div class="picker-questions">
       <div class="question">
-        <div class="question-text">1. How hard is the task?</div>
+        <div class="question-text">1. 💪 How hard is this task?</div>
         <div class="options" data-q="difficulty">
-          <button class="option" data-val="easy">Simple / repetitive</button>
-          <button class="option" data-val="medium">Average production work</button>
-          <button class="option" data-val="hard">Complex reasoning / hard coding</button>
+          <button class="option" data-val="easy">😎 Easy / repetitive</button>
+          <button class="option" data-val="medium">🙂 Average work</button>
+          <button class="option" data-val="hard">🤯 Brain-melting</button>
         </div>
       </div>
       <div class="question">
-        <div class="question-text">2. What's the volume?</div>
+        <div class="question-text">2. 📊 How many calls?</div>
         <div class="options" data-q="volume">
-          <button class="option" data-val="high">High (millions of calls)</button>
-          <button class="option" data-val="medium">Medium</button>
-          <button class="option" data-val="low">Low (interactive use)</button>
+          <button class="option" data-val="high">🚀 Tons (millions)</button>
+          <button class="option" data-val="medium">📈 Medium</button>
+          <button class="option" data-val="low">🐢 Just a few</button>
         </div>
       </div>
       <div class="question">
-        <div class="question-text">3. What matters most?</div>
+        <div class="question-text">3. 🎯 What matters most?</div>
         <div class="options" data-q="priority">
-          <button class="option" data-val="speed">Speed & cost</button>
-          <button class="option" data-val="balance">Balance</button>
-          <button class="option" data-val="quality">Quality at any cost</button>
+          <button class="option" data-val="speed">⚡ Speed & cost</button>
+          <button class="option" data-val="balance">⚖️ A bit of each</button>
+          <button class="option" data-val="quality">💎 Quality, no compromises</button>
         </div>
       </div>
     </div>
@@ -438,21 +632,23 @@
 
 <section id="techniques">
   <div class="section-head">
-    <div class="section-num">04 — Reference</div>
-    <h2 class="section-title">The 10 prompt techniques.</h2>
-    <p class="section-sub">From Module 03 — keep this open while you work.</p>
+    <span class="section-tag">04 · Cheat sheet</span>
+    <h2 class="section-title">10 prompt tricks the <span class="hl">pros use</span></h2>
+    <p class="section-sub">Save this page. Steal these on your next prompt.</p>
   </div>
   <div class="techniques" id="techniquesGrid"></div>
 </section>
 
 <footer>
-  <p class="footer-quote">"Stop writing one-line prompts. Start writing 3–10 line briefs. Then watch what changes."</p>
+  <span class="footer-emoji">🎉</span>
+  <p class="footer-quote">Stop writing one-line prompts.<br>Start writing <span class="hl">3–10 line briefs</span>.<br>Watch what changes.</p>
   <div class="footer-links">
-    <a href="01-introduction/README.md">Start course →</a>
-    <a href="https://claude.ai" target="_blank">Open claude.ai ↗</a>
-    <a href="https://docs.claude.com" target="_blank">Official docs ↗</a>
-    <a href="09-resources/prompt-cookbook.md">Prompt cookbook →</a>
+    <a href="01-introduction/README.md">🚀 Start the course</a>
+    <a href="https://claude.ai" target="_blank">💬 Open Claude</a>
+    <a href="https://docs.claude.com" target="_blank">📖 Official docs</a>
+    <a href="09-resources/prompt-cookbook.md">🍳 Prompt cookbook</a>
   </div>
+  <p class="footer-tiny">Made with ❤️ and a lot of Claude · MIT license · <a href="README.md" style="color:var(--accent);text-decoration:none;">Course README</a></p>
 </footer>
 
 </div>
@@ -460,28 +656,28 @@
 <script>
 // ================== DATA ==================
 const MODULES = [
-  { num: '01', icon: '👋', title: 'Introduction',         desc: 'What Claude is, model family, ethics, when to use it.', time: '10 min',     level: 'Beginner',     path: '01-introduction/README.md' },
-  { num: '02', icon: '🚀', title: 'Getting Started',       desc: 'Setup, plans, apps, your first real conversation.',     time: '15 min',     level: 'Beginner',     path: '02-getting-started/README.md' },
-  { num: '03', icon: '💡', title: 'Prompt Engineering',    desc: 'The 6 ingredients, 10 techniques, prompt patterns.',    time: '25 min',     level: 'Beginner',     path: '03-prompting/README.md' },
-  { num: '04', icon: '🛠',  title: 'Claude.ai Features',    desc: 'Projects, Artifacts, Files, Memory, Connectors.',       time: '20 min',     level: 'Intermediate', path: '04-features/README.md' },
-  { num: '05', icon: '💻', title: 'Claude Code',           desc: 'Agentic coding from your terminal.',                    time: '30 min',     level: 'Intermediate', path: '05-claude-code/README.md' },
-  { num: '06', icon: '⚙',  title: 'API Development',       desc: 'Python + TypeScript, streaming, tool use, vision.',     time: '45 min',     level: 'Developer',    path: '06-api-development/README.md' },
-  { num: '07', icon: '🧪', title: 'Advanced Techniques',   desc: 'Extended thinking, agents, MCP, evals.',                time: '30 min',     level: 'Advanced',     path: '07-advanced-techniques/README.md' },
-  { num: '08', icon: '🏗',  title: 'Real-World Projects',   desc: 'Four hands-on builds with full code.',                  time: '2-3 hr',     level: 'Advanced',     path: '08-real-world-projects/README.md' },
-  { num: '09', icon: '📚', title: 'Resources',             desc: 'Cheat sheets, prompt cookbook, glossary, FAQ.',         time: 'Reference',  level: 'All',          path: '09-resources/README.md' },
+  { num: '01', icon: '👋', title: 'Hello, Claude!',         desc: 'What Claude is, model family, and when to use it. Easy intro.', time: '10 min',     level: '🌱 Beginner',     path: '01-introduction/README.md' },
+  { num: '02', icon: '🚀', title: 'Get Set Up',             desc: 'Make an account, install the apps, have your first chat.',     time: '15 min',     level: '🌱 Beginner',     path: '02-getting-started/README.md' },
+  { num: '03', icon: '💡', title: 'Prompt Like a Pro',      desc: 'The 6 ingredients, 10 tricks, 30 ready patterns.',              time: '25 min',     level: '🌱 Beginner',     path: '03-prompting/README.md' },
+  { num: '04', icon: '🛠️', title: 'Claude.ai Features',     desc: 'Projects, Artifacts, Files, Memory, Connectors.',               time: '20 min',     level: '🌿 Intermediate', path: '04-features/README.md' },
+  { num: '05', icon: '💻', title: 'Claude Code',            desc: 'Agentic coding right from your terminal.',                      time: '30 min',     level: '🌿 Intermediate', path: '05-claude-code/README.md' },
+  { num: '06', icon: '⚙️', title: 'Build with the API',      desc: 'Python + TypeScript, streaming, tool use, vision.',             time: '45 min',     level: '🛠️ Developer',    path: '06-api-development/README.md' },
+  { num: '07', icon: '🧪', title: 'Advanced Wizardry',      desc: 'Extended thinking, agents, MCP, evals.',                        time: '30 min',     level: '🚀 Advanced',     path: '07-advanced-techniques/README.md' },
+  { num: '08', icon: '🏗️', title: 'Build 4 Real Things',    desc: 'Full projects with full code. Ship something today.',           time: '2-3 hr',     level: '🚀 Advanced',     path: '08-real-world-projects/README.md' },
+  { num: '09', icon: '📚', title: 'Cheat Sheets',           desc: 'Cookbook, glossary, FAQ, every diagram.',                       time: 'Reference',  level: '✨ All',          path: '09-resources/README.md' },
 ];
 
 const TECHNIQUES = [
-  { num: 1,  name: 'Specific audience',     blurb: 'Don\'t say "explain X" — say "explain X to a smart 12-year-old who loves video games."' },
-  { num: 2,  name: 'Show an example',       blurb: 'Paste a sample of "good." Claude is great at matching tone and structure.' },
-  { num: 3,  name: 'Break into steps',      blurb: 'Walk Claude through a process. Step 1: brainstorm. Step 2: outline. Step 3: draft.' },
-  { num: 4,  name: 'Chain-of-thought',      blurb: '"Before answering, work through this step by step." Big quality boost on hard problems.' },
-  { num: 5,  name: 'XML tags',              blurb: 'Wrap inputs in &lt;context&gt;, &lt;draft&gt;, &lt;task&gt; tags. Claude was trained on this.' },
-  { num: 6,  name: 'Few-shot examples',     blurb: 'Show 2–3 input/output pairs, then ask Claude to do the next one.' },
-  { num: 7,  name: 'Negative constraints',  blurb: 'Tell Claude what NOT to do: "don\'t apologize," "no disclaimers," "no summary at end."' },
-  { num: 8,  name: 'Ask me first',          blurb: 'For ambiguous tasks: "Ask me 3 clarifying questions before starting." Saves hours.' },
-  { num: 9,  name: 'Role at the end',       blurb: 'For long prompts, put role/instruction at the END to keep it fresh in working memory.' },
-  { num: 10, name: 'Iterate, don\'t restart', blurb: 'If 80% right, ask for surgical edits. "Tighten paragraph 2." Don\'t redo the whole prompt.' },
+  { num: 1,  name: 'Pick a specific audience',     blurb: 'Don\'t say "explain X" — say "explain X to a smart 12-year-old who loves video games." 🎮' },
+  { num: 2,  name: 'Show an example',              blurb: 'Paste a sample of "good." Claude is great at matching tone and structure. 📋' },
+  { num: 3,  name: 'Break into steps',             blurb: 'Walk Claude through a process. Step 1: brainstorm. Step 2: outline. Step 3: draft. 👣' },
+  { num: 4,  name: 'Chain-of-thought',             blurb: '"Before answering, work through this step by step." Big quality boost on hard problems. 🧠' },
+  { num: 5,  name: 'XML tags',                     blurb: 'Wrap inputs in &lt;context&gt;, &lt;draft&gt;, &lt;task&gt; tags. Claude was trained on this. 🏷️' },
+  { num: 6,  name: 'Few-shot examples',            blurb: 'Show 2–3 input/output pairs, then ask Claude to do the next one. ✨' },
+  { num: 7,  name: 'Negative constraints',         blurb: 'Tell Claude what NOT to do: "no apologies," "no disclaimers," "no summary." 🚫' },
+  { num: 8,  name: 'Ask me first',                 blurb: 'For ambiguous tasks: "Ask me 3 clarifying questions before starting." Saves hours. 🙋' },
+  { num: 9,  name: 'Role at the end',              blurb: 'For long prompts, put role/instruction at the END to keep it fresh. 🎯' },
+  { num: 10, name: 'Iterate, don\'t restart',       blurb: 'If 80% right, ask for surgical edits. "Tighten paragraph 2." Don\'t redo it all. 🔧' },
 ];
 
 // ================== MODULES + PROGRESS ==================
@@ -505,12 +701,12 @@ function renderModules() {
       <div class="module-title">${m.title}</div>
       <div class="module-desc">${m.desc}</div>
       <div class="module-meta">
-        <span>⏱ ${m.time}</span>
+        <span>⏱️ ${m.time}</span>
         <span>${m.level}</span>
       </div>
       <div class="module-actions">
         <a href="${m.path}" class="module-link">Open →</a>
-        <button class="module-toggle" onclick="toggleModule('${m.num}')">${progress[m.num] ? 'Undo' : 'Mark done'}</button>
+        <button class="module-toggle" onclick="toggleModule('${m.num}')">${progress[m.num] ? '↺ Undo' : '✓ Done'}</button>
       </div>
     </div>
   `).join('');
@@ -518,13 +714,20 @@ function renderModules() {
 }
 function toggleModule(num) {
   const progress = loadProgress();
-  if (progress[num]) delete progress[num];
-  else progress[num] = true;
+  const wasCompleted = !!progress[num];
+  if (wasCompleted) delete progress[num];
+  else {
+    progress[num] = true;
+    confetti();
+  }
   saveProgress(progress);
   renderModules();
+  if (!wasCompleted && Object.keys(progress).length === MODULES.length) {
+    setTimeout(() => confetti(80), 300);
+  }
 }
 function resetProgress() {
-  if (confirm('Reset all progress? This can\'t be undone.')) {
+  if (confirm('Reset all progress? You can\'t undo this 😅')) {
     localStorage.removeItem('claude-mastery-progress');
     renderModules();
   }
@@ -535,6 +738,23 @@ function updateProgress() {
   const pct = Math.round((done / MODULES.length) * 100);
   document.getElementById('progressPct').textContent = pct + '%';
   document.getElementById('progressFill').style.width = pct + '%';
+}
+
+// ================== CONFETTI ==================
+function confetti(count = 30) {
+  const colors = ['#ff7a4d', '#ffd23f', '#ff6b9d', '#6bcf7f', '#4dabf7', '#b197fc'];
+  for (let i = 0; i < count; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = Math.random() * 0.4 + 's';
+    c.style.animationDuration = (1.8 + Math.random() * 1.2) + 's';
+    c.style.transform = `rotate(${Math.random() * 360}deg)`;
+    if (Math.random() > 0.5) c.style.borderRadius = '50%';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3500);
+  }
 }
 
 // ================== PROMPT BUILDER ==================
@@ -550,7 +770,7 @@ function rebuild() {
 
   if (!role && !context && !task && !constraints && !format && !example) {
     output.classList.add('empty');
-    output.textContent = 'Fill in the fields → your prompt will assemble here in real time…';
+    output.textContent = 'Start filling things in… your prompt magically appears here ✨';
     return;
   }
 
@@ -574,10 +794,11 @@ function copyPrompt() {
   const btn = document.getElementById('copyBtn');
   if (output.classList.contains('empty')) return;
   navigator.clipboard.writeText(output.textContent).then(() => {
-    btn.textContent = '✓ Copied';
+    btn.textContent = '🎉 Copied!';
     btn.classList.add('copied');
+    confetti(15);
     setTimeout(() => {
-      btn.textContent = 'Copy prompt';
+      btn.textContent = '📋 Copy prompt';
       btn.classList.remove('copied');
     }, 2000);
   });
@@ -606,7 +827,6 @@ function updatePickerResult() {
   const verdict = document.getElementById('verdictText');
   const reasoning = document.getElementById('reasoningText');
 
-  // scoring: weighted decision
   let opusScore = 0, sonnetScore = 0, haikuScore = 0;
   if (difficulty === 'hard')   { opusScore += 3; sonnetScore += 1; }
   if (difficulty === 'medium') { sonnetScore += 3; opusScore += 1; haikuScore += 1; }
@@ -624,17 +844,17 @@ function updatePickerResult() {
   let model, reason;
   if (max === opusScore) {
     model = '💎 Claude Opus 4.7';
-    reason = `For hard reasoning and quality-first work, Opus delivers the strongest results. It costs more and runs slower, but you've signaled the task warrants it. Pin a dated version like \`claude-opus-4-7\` in production.`;
+    reason = `For hard reasoning and quality-first work, Opus is your champion. Costs more, runs slower — but you've signaled the task warrants it. Pin <code>claude-opus-4-7</code> in production.`;
   } else if (max === haikuScore) {
     model = '🚀 Claude Haiku 4.5';
-    reason = `Speed and cost win here. Haiku is built for high-volume, latency-sensitive work without sacrificing too much quality. Great for classification, simple Q&A, and real-time apps. Pin a dated version like \`claude-haiku-4-5-20251001\` in production.`;
+    reason = `Speed and cost win here! Haiku is built for high-volume, latency-sensitive work without sacrificing too much quality. Great for classification, simple Q&A, real-time apps. Pin <code>claude-haiku-4-5-20251001</code> in production.`;
   } else {
     model = '⚡ Claude Sonnet 4.6';
-    reason = `The best default for production. Sonnet balances intelligence, speed, and cost — the right pick for ~90% of real-world workloads. Pin a dated version like \`claude-sonnet-4-6\` in production.`;
+    reason = `The best default for production. Sonnet balances intelligence, speed, and cost — the right pick for ~90% of real workloads. Pin <code>claude-sonnet-4-6</code> in production.`;
   }
 
-  verdict.textContent = '→ ' + model;
-  reasoning.textContent = reason;
+  verdict.textContent = '🎯 ' + model;
+  reasoning.innerHTML = reason;
   result.style.display = 'block';
 }
 
@@ -643,7 +863,7 @@ function renderTechniques() {
   const grid = document.getElementById('techniquesGrid');
   grid.innerHTML = TECHNIQUES.map((t, i) => `
     <div class="technique fade-up" style="animation-delay: ${0.04 * (i+1)}s">
-      <div class="technique-num">${String(t.num).padStart(2, '0')}</div>
+      <div class="technique-num">#${String(t.num).padStart(2, '0')}</div>
       <div class="technique-name">${t.name}</div>
       <div class="technique-blurb">${t.blurb}</div>
     </div>

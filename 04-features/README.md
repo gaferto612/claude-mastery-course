@@ -307,3 +307,9 @@ You should now know how to:
 - [ ] Manage Memory and connect external tools via MCP
 
 > 👉 **Next up:** [Module 05 — Claude Code](../05-claude-code/) — graduating from chat to agentic coding in your terminal.
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 03 — Prompt Engineering](../03-prompting/) | [Course README](../README.md) | [Module 05 — Claude Code](../05-claude-code/) |

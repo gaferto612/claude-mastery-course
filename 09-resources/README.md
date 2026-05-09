@@ -170,3 +170,9 @@ If you've actually built the projects in Module 08, **you're now in the top few 
 Now go ship something.
 
 > ⭐ If this course helped, please star the repo so other people can find it.
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 08 — Real-World Projects](../08-real-world-projects/) | [Course README](../README.md) | _End of course_ |

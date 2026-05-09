@@ -379,3 +379,9 @@ You should now be able to:
 - [Anthropic's official prompt engineering guide](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)
 - [The Prompt Library on docs.claude.com](https://docs.claude.com/en/prompt-library/library)
 - [The full prompt cookbook in this course](../09-resources/prompt-cookbook.md) — 30 ready-to-use prompts
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 02 — Getting Started](../02-getting-started/) | [Course README](../README.md) | [Module 04 — Claude.ai Features](../04-features/) |

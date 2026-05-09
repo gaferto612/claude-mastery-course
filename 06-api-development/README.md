@@ -496,3 +496,9 @@ You should now be able to:
 - [Claude API docs](https://docs.claude.com/en/api/overview)
 - [Anthropic SDKs](https://docs.claude.com/en/api/client-sdks)
 - [The Anthropic Cookbook (notebooks)](https://github.com/anthropics/anthropic-cookbook)
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 05 — Claude Code](../05-claude-code/) | [Course README](../README.md) | [Module 07 — Advanced Techniques](../07-advanced-techniques/) |

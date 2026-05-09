@@ -1,0 +1,32 @@
+name: 🐛 Bug or content error
+description: A code example doesn't run, a link is broken, or a fact is wrong
+labels: ["bug"]
+body:
+  - type: textarea
+    id: where
+    attributes:
+      label: Where is the problem?
+      description: Module number, file path, or section heading.
+      placeholder: e.g. 06-api-development/examples/04-tool-use.py, line 49
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce (for code issues)
+      description: Commands you ran, OS, Python/Node version, SDK version.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and didn't find a duplicate
+          required: true

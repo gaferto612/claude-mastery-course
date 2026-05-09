@@ -323,3 +323,9 @@ You should now understand:
 - Production safety considerations
 
 > 👉 **Next up:** [Module 08 — Real-World Projects](../08-real-world-projects/) — four full projects with code.
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 06 — API Development](../06-api-development/) | [Course README](../README.md) | [Module 08 — Real-World Projects](../08-real-world-projects/) |

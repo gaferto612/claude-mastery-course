@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Anthropic Documentation
+    url: https://docs.claude.com
+    about: Official Claude API and product docs
+  - name: 💬 Anthropic Discord
+    url: https://www.anthropic.com/discord
+    about: Real-time discussion with engineers and the community

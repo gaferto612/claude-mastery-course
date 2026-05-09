@@ -153,7 +153,7 @@ flowchart TD
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/claude-mastery-course.git
+git clone https://github.com/gaferto612/claude-mastery-course.git
 cd claude-mastery-course
 
 # 2. Open the interactive hub (recommended!)
@@ -167,7 +167,10 @@ open 01-introduction/README.md
 # 4. For code examples (when you reach module 06)
 pip install anthropic            # Python
 npm install @anthropic-ai/sdk    # TypeScript / Node
+export ANTHROPIC_API_KEY="sk-ant-..."   # never commit this
 ```
+
+> 🔒 **Security note:** Treat your API key like a password. Use environment variables or a `.env` file (already in `.gitignore`) — never hardcode keys, never commit them, and rotate immediately if one leaks.
 
 ---
 
@@ -191,6 +194,8 @@ This course is released under the [MIT License](LICENSE) — free to use, fork, 
 ## 🙌 Contributing
 
 Found a typo? Have a better example or diagram? See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome!
+
+This project follows a [Code of Conduct](CODE_OF_CONDUCT.md) — please read it before participating. Notable changes are tracked in the [CHANGELOG](CHANGELOG.md).
 
 ---
 

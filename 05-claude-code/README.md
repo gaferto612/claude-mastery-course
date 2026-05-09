@@ -304,3 +304,9 @@ You should now have:
 
 - [Claude Code official docs](https://docs.claude.com/en/docs/claude-code/overview)
 - [Claude Code on npm](https://www.npmjs.com/package/@anthropic-ai/claude-code)
+
+---
+
+| ← Previous | 🏠 Home | Next → |
+|---|---|---|
+| [Module 04 — Claude.ai Features](../04-features/) | [Course README](../README.md) | [Module 06 — API Development](../06-api-development/) |

@@ -1,0 +1,61 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-syntax:
+    name: Python examples — syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile all .py files
+        run: |
+          python -m compileall -q \
+            06-api-development/examples \
+            08-real-world-projects/code
+
+  typescript-syntax:
+    name: TypeScript examples — type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install SDK and tsc
+        run: npm install --no-save @anthropic-ai/sdk typescript
+      - name: Type-check TS examples
+        run: |
+          npx tsc --noEmit --target es2022 --module esnext --moduleResolution bundler \
+            --strict --skipLibCheck --allowImportingTsExtensions \
+            06-api-development/examples/*.ts
+
+  markdown-links:
+    name: Markdown — internal link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check relative links resolve
+        run: |
+          set -e
+          missing=0
+          while IFS= read -r -d '' f; do
+            dir=$(dirname "$f")
+            grep -oE '\]\(\.\.?[^)]+\)' "$f" | sed -E 's/^\]\(([^)]+)\).*/\1/' | while read -r link; do
+              target="${link%%#*}"
+              [ -z "$target" ] && continue
+              resolved="$dir/$target"
+              if [ ! -e "$resolved" ]; then
+                echo "::error file=$f::Broken link: $link"
+                missing=1
+              fi
+            done
+          done < <(find . -name "*.md" -not -path "./node_modules/*" -print0)
+          exit $missing

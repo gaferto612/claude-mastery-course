@@ -95,9 +95,11 @@ Drop a folder of `.txt`/`.md`/`.pdf` files in, then ask questions. The simplest 
 ### Architecture
 
 ```
-📁 ./docs (PDFs, MDs, TXTs)  ──▶  📤 Extract text  ──▶  💾 Cached corpus  ─┐
-                                                                            ▼
-                              👤 User question  ──────────▶   ⚙️ Claude API  ──▶  💬 Answer with citations
+📁 ./docs (PDFs, MDs, TXTs)  ──▶  📤 Extract  ──▶  💾 Cached corpus
+                                                          │
+                                                          ▼
+👤 User question  ──────────────────────────▶  ⚙️ Claude API  ──▶  💬 Answer
+                                                                     (with citations)
 ```
 
 ### Code: `project2_doc_qa.py`

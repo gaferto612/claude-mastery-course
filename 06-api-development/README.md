@@ -419,17 +419,19 @@ Great for: dataset labeling, bulk content generation, periodic reports.
 
 Before you ship anything API-powered, walk this checklist top to bottom:
 
-```
-🏗️ I built something with the Claude API
-        │
-        ▼
-🔒 Secrets in vault    ──▶   ⏱️ Rate-limit endpoint   ──▶   💰 Cost caps + alerts
-                                                              │
-                                                              ▼
-🚀 Ship it!  ◀──  💾 Prompt caching  ◀──  🛡️ Fallback model  ◀──  🧪 Eval set  ◀──  📝 Logging + PII redact  ◀──  🔁 Retries w/ backoff
-```
+| # | Step | Why |
+|:---:|---|---|
+| 1 | 🔒 **Secrets in vault** | No keys in code, repo, or logs |
+| 2 | ⏱️ **Rate-limit endpoint** | Don't expose raw API to users |
+| 3 | 💰 **Cost caps + alerts** | Anomaly alerts on token spend |
+| 4 | 🔁 **Retries with backoff** | Handle 429s and 5xxs gracefully |
+| 5 | 📝 **Logging + PII redaction** | Audit trail without leaks |
+| 6 | 🧪 **Eval set** | Regression tests on every prompt change |
+| 7 | 🛡️ **Fallback model** | Survive model outages |
+| 8 | 💾 **Prompt caching** | If static context > 1024 tokens, cache it |
+| 9 | 🚀 **Ship it!** | |
 
-Before you ship:
+Detailed checklist:
 
 - [ ] **Secrets** in env vars or a vault, never in code
 - [ ] **Rate limiting** on your endpoint (don't expose raw API to users)

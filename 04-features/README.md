@@ -8,13 +8,15 @@
 
 ## 4.1 The Claude.ai feature universe
 
-| 🏗️ Workspace | 📥 Inputs | 📤 Outputs | 🌐 Live data | 🧠 Memory | 🔌 Connectors | 🎒 Skills |
-|---|---|---|---|---|---|---|
-| Projects | File uploads | Artifacts | Web Search | Cross-chat memory | Google Workspace | PowerPoint |
-| Custom Instructions | Images | Code Execution | Research Mode | Past chat search | GitHub | Excel |
-| Style Presets | PDFs | File Creation | | | Slack | Word |
-| | Spreadsheets | | | | Notion | PDF |
-| | | | | | 40+ more | Custom Skills |
+| Area | What's in it |
+|---|---|
+| 🏗️ **Workspace** | Projects · Custom Instructions · Style Presets |
+| 📥 **Inputs** | File Uploads · Images · PDFs · Spreadsheets |
+| 📤 **Outputs** | Artifacts · Code Execution · File Creation |
+| 🌐 **Live data** | Web Search · Research Mode |
+| 🧠 **Memory** | Cross-chat memory · Past chat search |
+| 🔌 **Connectors** | Google Workspace · GitHub · Slack · Notion · 40+ more |
+| 🎒 **Skills** | PowerPoint · Excel · Word · PDF · Custom Skills |
 
 ---
 
@@ -152,9 +154,11 @@ For bigger questions, **Research mode** runs many searches across many minutes a
 
 ```
 💬 Today's chat       ──remembers──▶  ┐
-💬 Tomorrow's chat    ◀──recalls───   │  🧠 Memory  ──▶  Your role · ongoing projects · preferences · recurring topics
-💬 Next week's chat   ◀──recalls───   ┘
+💬 Tomorrow's chat    ◀──recalls─────  ┼──▶  🧠 Memory
+💬 Next week's chat   ◀──recalls─────  ┘
 ```
+
+Memory holds: **your role · ongoing projects · preferences · recurring topics**
 
 You're in control:
 

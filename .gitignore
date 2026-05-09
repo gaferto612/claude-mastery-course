@@ -1,0 +1,38 @@
+# Secrets
+.env
+.env.local
+*.key
+api_key.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Node / TS
+node_modules/
+*.tsbuildinfo
+dist/
+.next/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Course-specific
+docs/                 # local doc Q&A files (Project 2)
+*.local.*
+
+# Logs
+*.log

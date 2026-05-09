@@ -1,0 +1,197 @@
+# 🎓 Claude Mastery — A Complete Course on Using Anthropic's Claude
+
+> A practical, hands-on, **visually-rich** course to help you get the most out of **Claude**, Anthropic's AI assistant — from your very first chat to building production-grade applications.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Made with Claude](https://img.shields.io/badge/Made%20with-Claude-D97757)](https://claude.ai)
+[![Modules](https://img.shields.io/badge/Modules-9-success)]()
+[![Code Examples](https://img.shields.io/badge/Code%20Examples-13-blueviolet)]()
+[![Diagrams](https://img.shields.io/badge/Diagrams-25%2B-orange)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+---
+
+## 🎯 The course at a glance
+
+```mermaid
+flowchart LR
+    A[👋 Module 1<br/>Introduction] --> B[🚀 Module 2<br/>Getting Started]
+    B --> C[💡 Module 3<br/>Prompting]
+    C --> D[🛠️ Module 4<br/>Features]
+    D --> E[💻 Module 5<br/>Claude Code]
+    D --> F[⚙️ Module 6<br/>API]
+    E --> G[🧪 Module 7<br/>Advanced]
+    F --> G
+    G --> H[🏗️ Module 8<br/>Projects]
+    H --> I[📚 Module 9<br/>Resources]
+
+    style A fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
+    style B fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
+    style C fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
+    style D fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
+    style E fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
+    style F fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
+    style G fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
+    style H fill:#FFC293,stroke:#D97757,color:#1a1a1a
+    style I fill:#FFB67E,stroke:#D97757,color:#1a1a1a
+```
+
+> 💡 **New here?** Open [`hub.html`](./hub.html) in your browser for an **interactive course dashboard** with progress tracking, a live prompt builder, and a model picker.
+
+---
+
+## 📖 About This Course
+
+This is your end-to-end guide to **mastering Claude**. Whether you're a curious beginner who just opened claude.ai for the first time, a power user who wants to squeeze more out of every prompt, or a developer integrating Claude into a product, this repo has a track for you.
+
+### What you'll learn — visually
+
+```mermaid
+mindmap
+  root((Claude<br/>Mastery))
+    Foundations
+      What is Claude?
+      Model family
+      Ethics & limits
+    Prompting
+      6 ingredients
+      10 techniques
+      30 patterns
+    Features
+      Projects
+      Artifacts
+      Files
+      Connectors
+      Memory
+      Skills
+    Building
+      Claude Code
+      Python SDK
+      TypeScript SDK
+      Tool use
+      Vision
+      Streaming
+    Advanced
+      Extended thinking
+      Agents
+      MCP
+      Computer use
+      Evals
+    Projects
+      CLI Chatbot
+      Doc Q&A
+      Research Agent
+      Code Reviewer
+```
+
+---
+
+## 🗺️ Course Map
+
+| # | Module | Visual focus | What you'll learn |
+|---|---|---|---|
+| **01** | [Introduction](./01-introduction/) | 📊 Model family chart | What Claude is, when to use it |
+| **02** | [Getting Started](./02-getting-started/) | 🖼️ UI tour | Setup, plans, apps, first chat |
+| **03** | [Prompt Engineering](./03-prompting/) | 🎯 Anatomy diagram | The 6-part prompt formula |
+| **04** | [Claude.ai Features](./04-features/) | 🧩 Feature map | Projects, Artifacts, Connectors |
+| **05** | [Claude Code](./05-claude-code/) | 🔄 Workflow flowchart | Agentic coding from your terminal |
+| **06** | [API Development](./06-api-development/) | ⚙️ Architecture diagrams | Build your own Claude-powered apps |
+| **07** | [Advanced Techniques](./07-advanced-techniques/) | 🤖 Agent loop diagram | Extended thinking, MCP, evals |
+| **08** | [Real-World Projects](./08-real-world-projects/) | 🏗️ System diagrams | 4 hands-on builds with full code |
+| **09** | [Resources](./09-resources/) | 🧾 Cheat sheets | Glossary, FAQ, links |
+
+---
+
+## 🎨 What makes this course different
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│   📊  25+ diagrams          ──  See concepts, don't just     │
+│                                  read about them             │
+│                                                              │
+│   💻  13 runnable scripts   ──  Copy, run, adapt             │
+│                                                              │
+│   🎯  30 ready prompts      ──  Drop-in templates            │
+│                                                              │
+│   🖥️   Interactive hub       ──  Track progress + try         │
+│                                  prompts live in browser     │
+│                                                              │
+│   🧭  Decision trees        ──  Pick the right model,        │
+│                                  the right tool, the right   │
+│                                  prompt every time           │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📈 Suggested learning paths
+
+```mermaid
+flowchart TD
+    Start[What's your goal?] --> Q1{Pick one}
+    Q1 -->|Just use Claude well| P1[🎨 Path A: Power User]
+    Q1 -->|Build with the API| P2[⚙️ Path B: Developer]
+    Q1 -->|Ship code faster| P3[💻 Path C: Engineer]
+    Q1 -->|All of it| P4[🏆 Path D: Complete]
+
+    P1 --> P1M[Modules 1 → 2 → 3 → 4 → 9]
+    P2 --> P2M[Modules 1 → 3 → 6 → 7 → 8 → 9]
+    P3 --> P3M[Modules 1 → 3 → 5 → 7 → 9]
+    P4 --> P4M[All 9 modules in order]
+
+    style P1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
+    style P2 fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
+    style P3 fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
+    style P4 fill:#FFC293,stroke:#D97757,color:#1a1a1a
+```
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/<your-username>/claude-mastery-course.git
+cd claude-mastery-course
+
+# 2. Open the interactive hub (recommended!)
+open hub.html        # macOS
+xdg-open hub.html    # Linux
+start hub.html       # Windows
+
+# 3. Or jump into module 01 in markdown
+open 01-introduction/README.md
+
+# 4. For code examples (when you reach module 06)
+pip install anthropic            # Python
+npm install @anthropic-ai/sdk    # TypeScript / Node
+```
+
+---
+
+## 🧰 What You'll Need
+
+| | Required? | What for |
+|---|---|---|
+| ☁️ Free [Claude.ai](https://claude.ai) account | ✅ Yes | Modules 01–04 |
+| 💎 Pro subscription (optional) | Recommended | Better models, Projects, Connectors |
+| 🔑 [Anthropic API key](https://console.anthropic.com) | For modules 06+ | Build your own apps |
+| 📦 Node.js 18+ | For modules 05–06 | Claude Code & TS SDK |
+| 🐍 Python 3.9+ | For modules 06+ | Python SDK examples |
+| 🧪 A real project to apply this to | Strongly recommended | Learning sticks when it solves a real problem |
+
+---
+
+## 📜 License
+
+This course is released under the [MIT License](LICENSE) — free to use, fork, remix, and share.
+
+## 🙌 Contributing
+
+Found a typo? Have a better example or diagram? See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome!
+
+---
+
+> ⭐ **If this course helps you, please star the repo so others can find it.**

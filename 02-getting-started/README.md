@@ -8,15 +8,8 @@
 
 ## 2.0 Your journey in this module
 
-```mermaid
-flowchart LR
-    A[📝 Sign up] --> B[💎 Pick plan]
-    B --> C[📱 Install apps]
-    C --> D[⚙️ Tune settings]
-    D --> E[💬 First chat]
-
-    style A fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style E fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+📝 Sign up   ──▶   💎 Pick plan   ──▶   📱 Install apps   ──▶   ⚙️ Tune settings   ──▶   💬 First chat
 ```
 
 ---
@@ -33,20 +26,7 @@ That's it. You can start chatting on the **Free** tier with no credit card.
 
 ## 2.2 Free vs. Pro vs. Max vs. Team — Which One Do You Need?
 
-```mermaid
-flowchart TD
-    Q[Which plan fits me?] --> Free[🆓 Free<br/>Casual users<br/>Daily limits]
-    Q --> Pro[💎 Pro<br/>Power users<br/>5x more usage]
-    Q --> Max[⚡ Max<br/>Heavy users<br/>Higher limits]
-    Q --> Team[👥 Team<br/>Small businesses<br/>Admin + collab]
-    Q --> Enterprise[🏢 Enterprise<br/>Larger orgs<br/>SSO + security]
-
-    style Free fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style Pro fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Max fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style Team fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-    style Enterprise fill:#FFB67E,stroke:#D97757,color:#1a1a1a
-```
+> **Quick map:** 🆓 Free  ·  💎 Pro  ·  ⚡ Max  ·  👥 Team  ·  🏢 Enterprise — going from casual to large-org. Detailed comparison below 👇
 
 | Plan | Best for | What you get |
 |---|---|---|

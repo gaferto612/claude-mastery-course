@@ -10,31 +10,12 @@ Each project is small enough to finish in an afternoon but realistic enough to e
 
 ## 🚀 The four projects — at a glance
 
-```mermaid
-flowchart TD
-    Course[📚 Module 8 Projects] --> P1[1️⃣ CLI Chatbot<br/>with Personality]
-    Course --> P2[2️⃣ Document Q&A<br/>Mini RAG]
-    Course --> P3[3️⃣ Research<br/>Agent]
-    Course --> P4[4️⃣ Code<br/>Reviewer Bot]
-
-    P1 --> S1[🛠 Streaming<br/>Multi-turn<br/>System prompts]
-    P2 --> S2[🛠 RAG<br/>File parsing<br/>Prompt caching]
-    P3 --> S3[🛠 Tool use<br/>Multi-step planning<br/>Web fetch]
-    P4 --> S4[🛠 Structured outputs<br/>git integration<br/>JSON schema]
-
-    style Course fill:#1a1a1a,stroke:#D97757,color:#fff
-    style P1 fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style P2 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style P3 fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style P4 fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-```
-
 | # | Project | Skills covered |
 |---|---|---|
-| 1 | **CLI Chatbot with Personality** | Multi-turn, system prompts, streaming |
-| 2 | **Document Q&A** | RAG basics, file parsing, prompt caching |
-| 3 | **Research Agent** | Tool use, web search, multi-step planning |
-| 4 | **Code Reviewer Bot** | GitHub integration, structured outputs |
+| 1️⃣ | **CLI Chatbot with Personality** | 🛠️ Streaming · multi-turn · system prompts |
+| 2️⃣ | **Document Q&A (Mini RAG)** | 🛠️ RAG basics · file parsing · prompt caching |
+| 3️⃣ | **Research Agent** | 🛠️ Tool use · multi-step planning · web fetch |
+| 4️⃣ | **Code Reviewer Bot** | 🛠️ Structured outputs · git integration · JSON schema |
 
 ---
 
@@ -113,17 +94,10 @@ Drop a folder of `.txt`/`.md`/`.pdf` files in, then ask questions. The simplest 
 
 ### Architecture
 
-```mermaid
-flowchart LR
-    Files[📁 ./docs folder<br/>PDFs, MDs, TXTs] --> Extract[📤 Extract text]
-    Extract --> Cache[💾 Cached corpus]
-    User([👤 User question]) --> API[⚙️ Claude API]
-    Cache -.cached.-> API
-    API --> Answer([💬 Answer with<br/>citations])
-
-    style Cache fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style API fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Answer fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+📁 ./docs (PDFs, MDs, TXTs)  ──▶  📤 Extract text  ──▶  💾 Cached corpus  ─┐
+                                                                            ▼
+                              👤 User question  ──────────▶   ⚙️ Claude API  ──▶  💬 Answer with citations
 ```
 
 ### Code: `project2_doc_qa.py`

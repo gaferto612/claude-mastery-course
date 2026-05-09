@@ -10,26 +10,11 @@
 
 A prompt is a **brief to a brilliant but contextless collaborator**. Claude has read most of the public internet — but it doesn't know:
 
-```mermaid
-mindmap
-  root((What Claude<br/>doesn't know<br/>by default))
-    Who you are
-      Your role
-      Your audience
-      Your industry
-    What you've tried
-      Past attempts
-      What failed
-      Constraints learned
-    What "good" means
-      Your style
-      Your standards
-      Your taste
-    What format you want
-      Length
-      Structure
-      Tone
-```
+| 🤔 Who you are | 🛠️ What you've tried | 🎯 What "good" means | 📦 What format you want |
+|---|---|---|---|
+| Your role | Past attempts | Your style | Length |
+| Your audience | What failed | Your standards | Structure |
+| Your industry | Constraints learned | Your taste | Tone |
 
 Your job as the prompter is to **close that gap fast**. The single biggest improvement most people can make: **stop writing one-line prompts** and start writing 3–10 line briefs.
 
@@ -39,22 +24,14 @@ Your job as the prompter is to **close that gap fast**. The single biggest impro
 
 Almost every excellent prompt contains some mix of these six ingredients. **Memorize them.**
 
-```mermaid
-flowchart TD
-    Prompt[🎯 Great Prompt] --> Role[🎭 ROLE<br/>Who Claude is]
-    Prompt --> Context[📋 CONTEXT<br/>Background info]
-    Prompt --> Task[🎯 TASK<br/>The actual ask]
-    Prompt --> Constraints[📐 CONSTRAINTS<br/>Boundaries]
-    Prompt --> Format[📦 FORMAT<br/>Output shape]
-    Prompt --> Examples[🌟 EXAMPLES<br/>Show, don't tell]
-
-    style Prompt fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Role fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style Context fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Task fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style Constraints fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-    style Format fill:#FFC293,stroke:#D97757,color:#1a1a1a
-    style Examples fill:#FFB67E,stroke:#D97757,color:#1a1a1a
+```
+                          🎯 Great Prompt
+                                │
+        ┌───────────┬───────────┼───────────┬───────────┐
+        ▼           ▼           ▼           ▼           ▼
+   🎭 ROLE     📋 CONTEXT    🎯 TASK    📐 CONSTRAINTS  📦 FORMAT  🌟 EXAMPLES
+   who Claude  background   the ask    boundaries     shape      show, don't tell
+   is
 ```
 
 | Ingredient | What it does | Mini-example |
@@ -114,23 +91,18 @@ flowchart TD
 
 ## 3.4 The 10 Core Techniques
 
-```mermaid
-flowchart LR
-    Start([Want better<br/>output?]) --> T1[1. Be specific<br/>about audience]
-    T1 --> T2[2. Show an<br/>example of 'good']
-    T2 --> T3[3. Break complex<br/>tasks into steps]
-    T3 --> T4[4. Ask Claude to<br/>think step-by-step]
-    T4 --> T5[5. Use XML tags<br/>for structure]
-    T5 --> T6[6. Few-shot<br/>examples]
-    T6 --> T7[7. Tell Claude<br/>what NOT to do]
-    T7 --> T8[8. Have Claude<br/>ask YOU first]
-    T8 --> T9[9. Put role<br/>at the END]
-    T9 --> T10[10. Iterate,<br/>don't restart]
-    T10 --> End([🎯 Better<br/>output])
-
-    style Start fill:#1a1a1a,stroke:#D97757,color:#fff
-    style End fill:#D97757,stroke:#1a1a1a,color:#fff
-```
+| # | Technique | One-liner |
+|---|---|---|
+| 1 | 🎯 Be specific about the audience | "Explain X to a smart 12-year-old who loves video games" |
+| 2 | 📋 Show an example of "good" | Paste a sample. Claude matches tone & structure brilliantly |
+| 3 | 👣 Break complex tasks into steps | Step 1: brainstorm. Step 2: outline. Step 3: draft |
+| 4 | 🧠 Ask Claude to think step-by-step | Big quality boost on hard reasoning |
+| 5 | 🏷️ Use XML tags for structure | Wrap inputs in `<context>`, `<draft>`, `<task>` |
+| 6 | ✨ Few-shot examples | 2–3 input/output pairs, then ask for the next one |
+| 7 | 🚫 Tell Claude what NOT to do | "no apologies, no disclaimers, no summary" |
+| 8 | 🙋 Have Claude ask YOU first | "Ask me 3 clarifying questions before starting" |
+| 9 | 🎯 Put role at the END | For long prompts, role last keeps it fresh |
+| 10 | 🔧 Iterate, don't restart | "Tighten paragraph 2" beats redoing the whole prompt |
 
 ### 1. Be specific about the audience
 
@@ -248,28 +220,16 @@ If output is 80% right, **ask for surgical edits** — don't redo the whole prom
 
 ## 3.5 The Prompt Quality Decision Tree
 
-```mermaid
-flowchart TD
-    A[I'm getting bad output] --> B{Is the task<br/>ambiguous?}
-    B -->|Yes| C[Add: 'Ask me 3 clarifying<br/>questions first']
-    B -->|No| D{Is it the wrong<br/>tone or format?}
-    D -->|Yes| E[Add: an EXAMPLE<br/>or a FORMAT spec]
-    D -->|No| F{Is it a complex<br/>multi-step task?}
-    F -->|Yes| G[Break into a CHAIN<br/>of smaller prompts]
-    F -->|No| H{Is the reasoning<br/>shallow?}
-    H -->|Yes| I[Add: 'Think step-by-step<br/>before answering']
-    H -->|No| J{Are details<br/>missing?}
-    J -->|Yes| K[Add: ROLE + CONTEXT<br/>+ CONSTRAINTS]
-    J -->|No| L[Try a different model<br/>e.g. Sonnet → Opus]
+🚨 **Bad output? Walk down this list — first match wins.**
 
-    style A fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style C fill:#D97757,stroke:#1a1a1a,color:#fff
-    style E fill:#D97757,stroke:#1a1a1a,color:#fff
-    style G fill:#D97757,stroke:#1a1a1a,color:#fff
-    style I fill:#D97757,stroke:#1a1a1a,color:#fff
-    style K fill:#D97757,stroke:#1a1a1a,color:#fff
-    style L fill:#D97757,stroke:#1a1a1a,color:#fff
-```
+| If… | Then… |
+|---|---|
+| ❓ Task is **ambiguous** | Add: *"Ask me 3 clarifying questions first"* |
+| 🎨 Wrong **tone or format** | Add: an **example** or a **format spec** |
+| 🧩 Complex **multi-step** task | Break into a **chain** of smaller prompts |
+| 🧠 Reasoning is **shallow** | Add: *"Think step-by-step before answering"* |
+| 📋 Details are **missing** | Add: **role + context + constraints** |
+| 🤷 Still bad? | Try a **different model** (Sonnet → Opus) |
 
 ---
 
@@ -341,19 +301,15 @@ Push back on my framing if you think I'm asking the wrong question.
 
 ## 3.8 The Prompt Engineering Mindset
 
-The best prompters share three habits:
+The best prompters share three habits — they all lead to the same place:
 
-```mermaid
-flowchart LR
-    H1[🧪 Run experiments,<br/>not requests] --> Quality[🎯 Consistently<br/>great output]
-    H2[📚 Keep a personal<br/>prompt library] --> Quality
-    H3[🔍 Study the model's<br/>failures] --> Quality
+| Habit | Why it works |
+|---|---|
+| 🧪 Run experiments, not requests | Every prompt is a hypothesis to test |
+| 📚 Keep a personal prompt library | Your best prompts are an asset; save them |
+| 🔍 Study the model's failures | Bad outputs teach you what's missing |
 
-    style H1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style H2 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style H3 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Quality fill:#D97757,stroke:#1a1a1a,color:#fff
-```
+→ All three roads lead to **🎯 consistently great output**.
 
 When Claude misfires, ask *"what was missing in my prompt?"* — not *"why is the AI dumb?"*
 

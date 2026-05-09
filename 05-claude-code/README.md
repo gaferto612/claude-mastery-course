@@ -10,19 +10,12 @@
 
 **Claude Code** is a command-line agent that turns Claude into a developer who lives in your terminal.
 
-```mermaid
-flowchart LR
-    User([👤 You]) -->|describe goal| CC[💻 Claude Code]
-    CC -->|reads| Repo[(📂 Your repo)]
-    CC -->|edits| Repo
-    CC -->|runs| Cmd[⚙️ Commands<br/>tests, builds, git]
-    CC -->|asks| User
-    User -->|approves| CC
-
-    style User fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style CC fill:#1a1a1a,stroke:#D97757,color:#fff
-    style Repo fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style Cmd fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
+```
+👤 You  ──describe goal──▶  💻 Claude Code  ──reads + edits──▶  📂 Your repo
+   ▲                              │
+   │                              ├──runs──▶  ⚙️ Commands (tests, builds, git)
+   │                              │
+   └──◀────asks for approval──────┘
 ```
 
 Unlike Claude.ai (which talks about your code), Claude Code can:
@@ -65,24 +58,30 @@ You'll be prompted to authenticate on first use.
 
 ## 5.3 The core loop
 
-```mermaid
-flowchart TD
-    A[👤 You describe a goal] --> B[🧠 Claude plans]
-    B --> C{Read-only<br/>or edit?}
-    C -->|Read-only| D[📖 Read files]
-    C -->|Edit| E[📝 Propose edit]
-    E --> F{👤 You approve?}
-    F -->|Yes| G[✏️ Apply change]
-    F -->|No| H[💬 Push back]
-    H --> B
-    D --> I[💬 Reports findings]
-    G --> J{Done?}
-    J -->|No| B
-    J -->|Yes| K[✅ Finished]
-
-    style A fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style F fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style K fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+   👤 You describe a goal
+            │
+            ▼
+   🧠 Claude plans  ◀──────────────┐
+            │                      │
+            ▼                      │
+      Read-only or edit?           │
+       │            │              │
+       ▼            ▼              │
+  📖 Read       📝 Propose         │
+   files         edit              │
+       │            │              │
+       │            ▼              │
+       │     👤 You approve?       │
+       │      │           │        │
+       │     yes          no ──▶ 💬 push back ──┘
+       │      ▼
+       │   ✏️ Apply
+       │      │
+       ▼      ▼
+   💬 Report  ── Done? ──▶ ✅ Finished
+                  │
+                  no ──▶ (back to plan)
 ```
 
 ---
@@ -221,18 +220,23 @@ diagram, drill into the 3 most important modules.
 
 ## 5.8 Permissions & Safety
 
-```mermaid
-flowchart TD
-    A[Claude wants to:<br/>- Run a command<br/>- Edit a file<br/>- Make a network request] --> B{Configured<br/>auto-allow?}
-    B -->|Yes - safe ops<br/>git status, npm test| C[✅ Auto-allow]
-    B -->|No - everything else| D[👤 Asks you first]
-    D --> E{You approve?}
-    E -->|Yes| F[✏️ Execute]
-    E -->|No| G[🚫 Skip & explain]
-
-    style B fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style D fill:#1a1a1a,stroke:#D97757,color:#fff
-    style F fill:#D97757,stroke:#1a1a1a,color:#fff
+```
+Claude wants to run a command, edit a file, or make a network request
+                              │
+                              ▼
+                  Configured as auto-allow?
+                   │                    │
+              YES (safe ops:       NO (everything else)
+              git status, npm           │
+              test, etc.)               ▼
+                   │              👤 Asks you first
+                   ▼                    │
+              ✅ Auto-allow              ▼
+                              You approve?
+                              │           │
+                             yes          no
+                              ▼           ▼
+                          ✏️ Execute   🚫 Skip & explain
 ```
 
 > 🛑 **Never run Claude Code on a directory you can't afford to lose.** Use git. Commit before big agentic runs. You'll thank yourself.
@@ -265,24 +269,15 @@ flowchart TD
 
 ## 5.10 When to Use Claude Code vs. Claude.ai
 
-```mermaid
-flowchart LR
-    Task[I have a task] --> Q{What kind?}
-    Q -->|Brainstorming<br/>architecture| CA1[💬 Claude.ai]
-    Q -->|Single function<br/>in isolation| Either[Either]
-    Q -->|Multi-file refactor| CC1[💻 Claude Code]
-    Q -->|PR review| CC2[💻 Claude Code]
-    Q -->|Writing the<br/>launch blog post| CA2[💬 Claude.ai]
-    Q -->|Debugging flaky<br/>test suite| CC3[💻 Claude Code]
-    Q -->|Pair programming<br/>on new feature| CC4[💻 Claude Code]
-
-    style CC1 fill:#1a1a1a,stroke:#D97757,color:#fff
-    style CC2 fill:#1a1a1a,stroke:#D97757,color:#fff
-    style CC3 fill:#1a1a1a,stroke:#D97757,color:#fff
-    style CC4 fill:#1a1a1a,stroke:#D97757,color:#fff
-    style CA1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style CA2 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-```
+| Task | Best tool |
+|---|---|
+| 🏗️ Brainstorming architecture | 💬 **Claude.ai** |
+| ✍️ Writing the launch blog post | 💬 **Claude.ai** |
+| 🔧 Single function in isolation | Either |
+| 🔄 Multi-file refactor | 💻 **Claude Code** |
+| 🔍 PR review | 💻 **Claude Code** |
+| 🐛 Debugging a flaky test suite | 💻 **Claude Code** |
+| 🤝 Pair programming on a new feature | 💻 **Claude Code** |
 
 A lot of pros use both: **Claude.ai for thinking, Claude Code for shipping**.
 

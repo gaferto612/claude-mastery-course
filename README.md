@@ -13,28 +13,15 @@
 
 ## 🎯 The course at a glance
 
-```mermaid
-flowchart LR
-    A[👋 Module 1<br/>Introduction] --> B[🚀 Module 2<br/>Getting Started]
-    B --> C[💡 Module 3<br/>Prompting]
-    C --> D[🛠️ Module 4<br/>Features]
-    D --> E[💻 Module 5<br/>Claude Code]
-    D --> F[⚙️ Module 6<br/>API]
-    E --> G[🧪 Module 7<br/>Advanced]
-    F --> G
-    G --> H[🏗️ Module 8<br/>Projects]
-    H --> I[📚 Module 9<br/>Resources]
+| | | | | |
+|---|---|---|---|---|
+| 👋 **01** Intro | → | 🚀 **02** Getting Started | → | 💡 **03** Prompting |
+| | | | | ↓ |
+| 🏗️ **08** Projects | ← | 🧪 **07** Advanced | ← | 🛠️ **04** Features |
+| ↓ | | ↑ | | ↓ |
+| 📚 **09** Resources | | ⚙️ **06** API | ← | 💻 **05** Claude Code |
 
-    style A fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style B fill:#FFF1E6,stroke:#D97757,color:#1a1a1a
-    style C fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style D fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style E fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style F fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style G fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-    style H fill:#FFC293,stroke:#D97757,color:#1a1a1a
-    style I fill:#FFB67E,stroke:#D97757,color:#1a1a1a
-```
+> **Path through the course:** Start at 01 → walk through 02–04 → branch into 05 (terminal) **and/or** 06 (API) → both flow into 07 → projects in 08 → reference in 09.
 
 > 💡 **New here?** Open [`hub.html`](./hub.html) in your browser for an **interactive course dashboard** with progress tracking, a live prompt builder, and a model picker.
 
@@ -44,45 +31,16 @@ flowchart LR
 
 This is your end-to-end guide to **mastering Claude**. Whether you're a curious beginner who just opened claude.ai for the first time, a power user who wants to squeeze more out of every prompt, or a developer integrating Claude into a product, this repo has a track for you.
 
-### What you'll learn — visually
+### What you'll learn
 
-```mermaid
-mindmap
-  root((Claude<br/>Mastery))
-    Foundations
-      What is Claude?
-      Model family
-      Ethics & limits
-    Prompting
-      6 ingredients
-      10 techniques
-      30 patterns
-    Features
-      Projects
-      Artifacts
-      Files
-      Connectors
-      Memory
-      Skills
-    Building
-      Claude Code
-      Python SDK
-      TypeScript SDK
-      Tool use
-      Vision
-      Streaming
-    Advanced
-      Extended thinking
-      Agents
-      MCP
-      Computer use
-      Evals
-    Projects
-      CLI Chatbot
-      Doc Q&A
-      Research Agent
-      Code Reviewer
-```
+| 🌱 **Foundations** | 💡 **Prompting** | 🛠️ **Features** | ⚙️ **Building** | 🧪 **Advanced** | 🏗️ **Projects** |
+|---|---|---|---|---|---|
+| What is Claude? | 6 ingredients | Projects | Claude Code | Extended thinking | CLI Chatbot |
+| Model family | 10 techniques | Artifacts | Python SDK | Agents | Doc Q&A |
+| Ethics & limits | 30 patterns | Files | TypeScript SDK | MCP | Research Agent |
+| When to use it | Decision trees | Connectors | Tool use | Computer use | Code Reviewer |
+| | | Memory | Vision | Evals | |
+| | | Skills | Streaming | | |
 
 ---
 
@@ -128,24 +86,14 @@ mindmap
 
 ## 📈 Suggested learning paths
 
-```mermaid
-flowchart TD
-    Start[What's your goal?] --> Q1{Pick one}
-    Q1 -->|Just use Claude well| P1[🎨 Path A: Power User]
-    Q1 -->|Build with the API| P2[⚙️ Path B: Developer]
-    Q1 -->|Ship code faster| P3[💻 Path C: Engineer]
-    Q1 -->|All of it| P4[🏆 Path D: Complete]
+**What's your goal?** Pick one and follow the trail. 👇
 
-    P1 --> P1M[Modules 1 → 2 → 3 → 4 → 9]
-    P2 --> P2M[Modules 1 → 3 → 6 → 7 → 8 → 9]
-    P3 --> P3M[Modules 1 → 3 → 5 → 7 → 9]
-    P4 --> P4M[All 9 modules in order]
-
-    style P1 fill:#FFE5D1,stroke:#D97757,color:#1a1a1a
-    style P2 fill:#FFD9BC,stroke:#D97757,color:#1a1a1a
-    style P3 fill:#FFCEA8,stroke:#D97757,color:#1a1a1a
-    style P4 fill:#FFC293,stroke:#D97757,color:#1a1a1a
-```
+| Path | Best for | Modules to follow |
+|---|---|---|
+| 🎨 **A — Power User** | Just want to use Claude well | `01 → 02 → 03 → 04 → 09` |
+| ⚙️ **B — Developer** | Build apps with the API | `01 → 03 → 06 → 07 → 08 → 09` |
+| 💻 **C — Engineer** | Ship code faster | `01 → 03 → 05 → 07 → 09` |
+| 🏆 **D — Complete** | All of it, in order | `01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09` |
 
 ---
 

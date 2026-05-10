@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" markdown="1">
 
 <img src="./assets/banner.svg" alt="Claude Mastery — A complete course on Anthropic's Claude" width="100%"/>
 
@@ -77,7 +77,7 @@ Whether you're a curious beginner who just opened claude.ai for the first time, 
 
 <table>
 <tr>
-<td width="33%" align="center" valign="top">
+<td width="33%" align="center" valign="top" markdown="1">
 
 ### 📊
 **70+ visuals**
@@ -85,7 +85,7 @@ Whether you're a curious beginner who just opened claude.ai for the first time, 
 Tables, flows, decision trees, ASCII diagrams. **See** concepts, don't just read about them.
 
 </td>
-<td width="33%" align="center" valign="top">
+<td width="33%" align="center" valign="top" markdown="1">
 
 ### 💻
 **13 runnable scripts**
@@ -93,7 +93,7 @@ Tables, flows, decision trees, ASCII diagrams. **See** concepts, don't just read
 Copy them, run them, break them, adapt them. Python + TypeScript covered.
 
 </td>
-<td width="33%" align="center" valign="top">
+<td width="33%" align="center" valign="top" markdown="1">
 
 ### 🎯
 **30 ready prompts**
@@ -103,7 +103,7 @@ Drop-in templates from the [prompt cookbook](./09-resources/prompt-cookbook.md).
 </td>
 </tr>
 <tr>
-<td width="33%" align="center" valign="top">
+<td width="33%" align="center" valign="top" markdown="1">
 
 ### 🎮
 **Interactive hub**
@@ -111,7 +111,7 @@ Drop-in templates from the [prompt cookbook](./09-resources/prompt-cookbook.md).
 Track progress + build prompts live in your browser. [Open `hub.html`](./hub.html).
 
 </td>
-<td width="33%" align="center" valign="top">
+<td width="33%" align="center" valign="top" markdown="1">
 
 ### 🧭
 **Decision trees**
@@ -119,7 +119,7 @@ Track progress + build prompts live in your browser. [Open `hub.html`](./hub.htm
 Pick the right model, the right tool, the right prompt — every time.
 
 </td>
-<td width="33%" align="center" valign="top">
+<td width="33%" align="center" valign="top" markdown="1">
 
 ### 🆓
 **100% free**
@@ -195,7 +195,7 @@ This project follows a [Code of Conduct](CODE_OF_CONDUCT.md) — please read it 
 
 <img src="./assets/divider.svg" alt="" width="100%"/>
 
-<div align="center">
+<div align="center" markdown="1">
 
 ### ⭐ If this course helps you, please star the repo so others can find it.
 

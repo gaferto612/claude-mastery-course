@@ -60,3 +60,13 @@ The modules form a directed course graph documented in `README.md` (the "Course 
 2. **`hub.html` is a self-contained mirror** of the course navigation — it embeds module titles, progress tracking, and a model picker as a single static HTML file (no build, no JS bundler). If you add or rename a module, update `hub.html` to match.
 
 The `assets/` directory holds the SVG banner/divider used by `README.md`; module READMEs should keep using these rather than introducing per-module imagery.
+
+## Git workflow
+
+Always pull and merge before starting work and before pushing:
+
+```bash
+git pull origin <branch-name>     # always pull first; merge (do not rebase) any incoming changes
+```
+
+Never force-push. Resolve merge conflicts by merging — do not discard remote work.

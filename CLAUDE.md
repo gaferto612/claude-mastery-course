@@ -15,9 +15,9 @@ CI runs three checks on every PR to `main`. Reproduce them locally before pushin
 python -m compileall -q 06-api-development/examples 08-real-world-projects/code
 
 # 2. TypeScript type check — strict mode, no emit
-npm install --no-save @anthropic-ai/sdk typescript
+npm install --no-save @anthropic-ai/sdk typescript @types/node
 npx tsc --noEmit --target es2022 --module esnext --moduleResolution bundler \
-  --strict --skipLibCheck --allowImportingTsExtensions \
+  --strict --skipLibCheck --allowImportingTsExtensions --types node \
   06-api-development/examples/*.ts
 
 # 3. Markdown internal link check — every relative link must resolve to a real file

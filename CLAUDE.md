@@ -15,9 +15,9 @@ CI runs three checks on every PR to `main`. Reproduce them locally before pushin
 python -m compileall -q 06-api-development/examples 08-real-world-projects/code
 
 # 2. TypeScript type check — strict mode, no emit
-npm install --no-save @anthropic-ai/sdk typescript
+npm install --no-save @anthropic-ai/sdk typescript @types/node
 npx tsc --noEmit --target es2022 --module esnext --moduleResolution bundler \
-  --strict --skipLibCheck --allowImportingTsExtensions \
+  --strict --skipLibCheck --allowImportingTsExtensions --types node \
   06-api-development/examples/*.ts
 
 # 3. Markdown internal link check — every relative link must resolve to a real file
@@ -60,3 +60,13 @@ The modules form a directed course graph documented in `README.md` (the "Course 
 2. **`hub.html` is a self-contained mirror** of the course navigation — it embeds module titles, progress tracking, and a model picker as a single static HTML file (no build, no JS bundler). If you add or rename a module, update `hub.html` to match.
 
 The `assets/` directory holds the SVG banner/divider used by `README.md`; module READMEs should keep using these rather than introducing per-module imagery.
+
+## Git workflow
+
+Always pull and merge before starting work and before pushing:
+
+```bash
+git pull origin <branch-name>     # always pull first; merge (do not rebase) any incoming changes
+```
+
+Never force-push. Resolve merge conflicts by merging — do not discard remote work.

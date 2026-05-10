@@ -30,11 +30,11 @@ jobs:
         with:
           node-version: "20"
       - name: Install SDK and tsc
-        run: npm install --no-save @anthropic-ai/sdk typescript
+        run: npm install --no-save @anthropic-ai/sdk typescript @types/node
       - name: Type-check TS examples
         run: |
           npx tsc --noEmit --target es2022 --module esnext --moduleResolution bundler \
-            --strict --skipLibCheck --allowImportingTsExtensions \
+            --strict --skipLibCheck --allowImportingTsExtensions --types node \
             06-api-development/examples/*.ts
 
   markdown-links:
